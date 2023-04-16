@@ -1,0 +1,17 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 20rem;
+    height: auto;
+    background-color: rgb(62, 10, 96);
+    margin: 7rem auto;
+    padding: 4rem;
+    border-radius: 1rem;
+}
+
+ form div {
+    display: flex;
+    
+}
