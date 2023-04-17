@@ -6,13 +6,12 @@ import { InputForm } from '../components/InputForm/InputForm'
 export default function Register () {
   return (
     <Form
-      account={{ children: '¿Ya tienes cuenta?' }}
-      link='/login'
-      acct={{ children: '¡Inicia sesión!' }}
+      linkAccount='/login'
+      account={{ children: '¿Ya tienes cuenta? ¡Inicia sesión!' }}
     >
       <h1>¡Regístrate!</h1>
       <InputForm type='text' placeholder='Ingrese su usuario' />
-      <InputForm type='email' placeholder='ejemplo@gmail.com' />
+      <InputForm type='email' placeholder='Ingrese su correo' />
       <InputForm type='password' placeholder='Ingrese su contraseña' />
       <InputForm type='password' placeholder='Repite la contraseña' />
       <ButtonForm>Registrarse</ButtonForm>

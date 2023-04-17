@@ -1,17 +1,13 @@
 import './form-style.css'
 
-export function Form ({ children, account, link, acct, linkPass, pass }) {
+export function Form ({ children, linkAccount, account }) {
   return (
     <form>
       {children}
-      {/* <div>
-        <a href={linkPass}>
-          {pass.children}
-        </a>
-        <a href={link}>
-          {acct.children}
-        </a>
-      </div> */}
+
+      <a href={linkAccount}>
+        {account.children}
+      </a>
 
     </form>
   )
