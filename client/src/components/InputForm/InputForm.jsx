@@ -8,6 +8,5 @@ export function InputForm ({ children, ...props }) {
       </label>
       <input {...props} required />
     </div>
-
   )
 }
