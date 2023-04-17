@@ -1,8 +1,7 @@
-import React from 'react'
-import { ButtonForm } from '../components/ButtonForm/ButtonForm'
-import { Form } from '../components/Form/Form'
-import { InputForm } from '../components/InputForm/InputForm'
-import { AiOutlineUser, AiOutlineMail, AiOutlineLock } from 'react-icons/ai'
+import { ButtonForm } from '../components/ButtonForm/ButtonForm' // ButtonForm componente
+import { Form } from '../components/Form/Form' // Form componente
+import { InputForm } from '../components/InputForm/InputForm' // InputForm componente
+import { AiOutlineUser, AiOutlineMail, AiOutlineLock } from 'react-icons/ai' // Iconos
 
 export default function Register () {
   return (
@@ -10,7 +9,7 @@ export default function Register () {
       linkAccount='/login'
       account={{ children: '¿Ya tienes cuenta? ¡Inicia sesión!' }}
     >
-      <h1>¡Regístrate!</h1>
+      <h1>Logo</h1>
       <InputForm id='username' type='text' placeholder='Ingrese su suario'>
         <AiOutlineUser />
       </InputForm>

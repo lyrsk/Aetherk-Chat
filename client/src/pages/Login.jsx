@@ -1,7 +1,7 @@
-import { ButtonForm } from '../components/ButtonForm/ButtonForm'
-import { Form } from '../components/Form/Form'
-import { InputForm } from '../components/InputForm/InputForm'
-import { FaUserAlt, FaLock } from 'react-icons/fa'
+import { ButtonForm } from '../components/ButtonForm/ButtonForm' // ButtonForm componente
+import { Form } from '../components/Form/Form' // Form componente
+import { InputForm } from '../components/InputForm/InputForm' // InputForm componente
+import { FaUserAlt, FaLock } from 'react-icons/fa' // Iconos
 
 export default function Login () {
   return (
@@ -9,7 +9,7 @@ export default function Login () {
       linkAccount='/register'
       account={{ children: '¿No tienes cuenta? ¡Regístrate!' }}
     >
-      <h1>¡Bienvenido!</h1>
+      <h1>Logo</h1>
       <InputForm id='username' type='text' placeholder='Usuario'>
         <FaUserAlt />
       </InputForm>
