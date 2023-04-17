@@ -1,7 +1,7 @@
 import { ButtonForm } from '../components/ButtonForm/ButtonForm' // ButtonForm componente
 import { Form } from '../components/Form/Form' // Form componente
 import { InputForm } from '../components/InputForm/InputForm' // InputForm componente
-import { AiOutlineMail } from 'react-icons/ai' // Iconos
+import { GrMail } from 'react-icons/gr'
 
 export default function Password () {
   return (
@@ -9,11 +9,9 @@ export default function Password () {
       linkAccount='/login'
       account={{ children: 'o ¡Inicia sesión!' }}
     >
-      <div>
-        <h1>Logo</h1>
-      </div>
+      <h1>Logo</h1>
       <InputForm id='email' type='email' placeholder='Ingrese su correo'>
-        <AiOutlineMail />
+        <GrMail />
       </InputForm>
       <ButtonForm>Cambiar contraseña</ButtonForm>
     </Form>
