@@ -4,7 +4,7 @@ form {
     justify-content: center;
     width: 22rem;
     height: auto;
-    background-color: #311D52;
+    background-color: #23103A;
     margin: 7rem auto;
     padding: 3rem;
     border-radius: 1rem;
@@ -12,6 +12,14 @@ form {
 
 a {
     font-size: 1em;
+}
+
+a:hover {
+    color: #FF6C00;
+}
+
+a:active {
+    color: #A0204C;
 }
 
 h1 {

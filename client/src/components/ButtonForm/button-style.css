@@ -1,6 +1,6 @@
 button {
     color: white;
-    background-color: rgb(167, 51, 94);
+    background-color: #A0204C;
     font-size: 1em;
     cursor: pointer;
     border: none;
@@ -16,5 +16,5 @@ button {
 }
 
 button:hover {
-    background-color: rgb(209, 82, 128);
+    background-color: #FF6C00;
 }
