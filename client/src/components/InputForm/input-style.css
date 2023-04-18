@@ -2,7 +2,6 @@ label {
     display: flex;
     align-items: center;
     padding: 0.5rem;
-    /* border-radius: 4px; */
 }
 
 input {
@@ -18,9 +17,14 @@ input {
 }
 
 input:focus {
-    border-bottom: 1px solid rgb(209, 82, 128);
+    border-bottom: 1px solid #A0204C;
+}
+
+::placeholder {
+    color: rgba(255, 255, 255, 0.505);
 }
 
 svg {
     color: white;
 }
+

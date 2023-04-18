@@ -10,13 +10,17 @@ export default function Login () {
       account={{ children: '¿No tienes cuenta? ¡Regístrate!' }}
     >
       <h1>Logo</h1>
+
       <InputForm id='username' type='text' placeholder='Usuario'>
         <FaUserAlt />
       </InputForm>
+
       <InputForm id='password' type='password' placeholder='Contraseña'>
         <FaLock />
       </InputForm>
+
       <ButtonForm>Iniciar sesión</ButtonForm>
+
       <div id='form-forget-password'>
         <a href='/password'>¿Olvidaste tu contraseña?</a>
       </div>
