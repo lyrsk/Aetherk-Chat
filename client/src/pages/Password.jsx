@@ -11,7 +11,7 @@ export default function Password () {
     >
       <h1>Logo</h1>
 
-      <InputForm id='email' type='email' placeholder='Ingrese su correo'>
+      <InputForm id='email' type='email' placeholder='Ingrese su correo' autoComplete='off'>
         <GrMail />
       </InputForm>
 
