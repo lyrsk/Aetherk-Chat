@@ -11,11 +11,11 @@ export default function Login () {
     >
       <h1>Logo</h1>
 
-      <InputForm id='username' type='text' placeholder='Usuario'>
+      <InputForm id='username' type='text' placeholder='Usuario' autoComplete='off'>
         <FaUserAlt />
       </InputForm>
 
-      <InputForm id='password' type='password' placeholder='Contraseña'>
+      <InputForm id='password' type='password' placeholder='Contraseña' autoComplete='off'>
         <FaLock />
       </InputForm>
 
