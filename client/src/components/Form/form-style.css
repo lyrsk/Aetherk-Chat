@@ -9,6 +9,11 @@ form {
     padding: 2rem;
     border-radius: 1rem;
 }
+div a {
+    color: rgba(246, 246, 246, 0.6);
+    font-size: 0.8em;
+    margin: 0.1em;
+}
 
 a {
     font-size: 1em;
