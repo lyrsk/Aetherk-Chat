@@ -11,7 +11,8 @@ input {
     background-color: transparent;
     border-bottom: 1px solid #ffffff;
     font-size: 1em;
-    margin-left: 0.5rem;
+    margin-left: 0.5em;
+    margin-right: 0.8em;
     padding: 0.5rem;
     width: 100%;
 }
