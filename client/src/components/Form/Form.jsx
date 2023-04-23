@@ -4,9 +4,11 @@ export function Form ({ children, linkAccount, account }) {
   return (
     <form>
       {children}
-      <a href={linkAccount}>
-        {account.children}
-      </a>
+      <div>
+        <a href={linkAccount}>
+          {account.children}
+        </a>
+      </div>
     </form>
   )
 }
