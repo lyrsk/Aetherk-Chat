@@ -4,7 +4,7 @@ import Chat from './pages/Chat.jsx'
 import Login from './pages/Login.jsx'
 import Register from './pages/Register.jsx'
 import Password from './pages/Password.jsx'
-import './app.css'
+import './App.css'
 
 function App () {
   return (

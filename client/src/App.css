@@ -2,10 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Libre Caslon Text', serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
-    /* background-color: #191A19; */
-    background-color: #101010;
+    background-color: #151515;
 }
