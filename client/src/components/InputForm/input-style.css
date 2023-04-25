@@ -18,7 +18,7 @@ input {
 }
 
 input:focus {
-    border-bottom: 1px solid #A0204C;
+    border-bottom: 1px solid #fb5600;
 }
 
 ::placeholder {

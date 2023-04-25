@@ -1,11 +1,11 @@
 button {
     color: white;
-    background-color: #A0204C;
+    background-color: #fb5600;
     font-size: 1em;
     cursor: pointer;
     border: none;
     border-radius: 0.4em;
-    margin: 0.6em 0em 1em 0em;
+    margin: 0.6em 0em 1.2em 0em;
     padding: 0.6em;
     /* width: 10em; */
     width: auto;

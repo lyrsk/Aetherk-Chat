@@ -4,7 +4,8 @@ form {
     justify-content: center;
     width: 22rem;
     height: auto;
-    background-color: #23103A;
+    /* background-color: #23103A; */
+    background-color: #261332;
     margin: 7rem auto;
     padding: 2rem;
     border-radius: 1rem;
@@ -29,7 +30,7 @@ a:active {
 
 h1 {
     font-size: 2em;
-    margin: 0 0 1rem 0;
+    margin: 0 0 1em 0;
     display: flex;
     justify-content: center;
 }
