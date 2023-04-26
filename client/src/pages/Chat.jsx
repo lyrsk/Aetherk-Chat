@@ -1,7 +1,9 @@
+import Logo from '../assets/logo-white.png'
+
 export default function Chat () {
   return (
     <>
-      <h1>Chat</h1>
+      <img src={Logo} alt='Logo' />
     </>
   )
 }
