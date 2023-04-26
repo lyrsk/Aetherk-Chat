@@ -5,13 +5,13 @@ form {
     width: 22rem;
     height: auto;
     /* background-color: #23103A; */
-    background-color: #261332;
+    background-color: whitesmoke;
     margin: 7rem auto;
     padding: 2rem;
     border-radius: 1rem;
 }
 div a {
-    color: rgba(246, 246, 246, 0.6);
+    color: #646464;
     font-size: 0.8em;
     margin: 0.1em;
 }
@@ -21,11 +21,11 @@ a {
 }
 
 a:hover {
-    color: #FF6C00;
+    color: #12579c;
 }
 
 a:active {
-    color: #A0204C;
+    color: #0f4377;
 }
 
 h1 {
@@ -33,6 +33,12 @@ h1 {
     margin: 0 0 1em 0;
     display: flex;
     justify-content: center;
+}
+
+img {
+    margin: 0 auto 1em auto;
+    width: 250px;
+    height: auto;
 }
 
 h1, a {
@@ -44,13 +50,6 @@ div, a {
     display: flex;
     justify-content: center;
 }
-/* Borrar */
-/* img { 
-    width: 100%;
-    height: auto;
-    border-radius: 1rem;
-    margin-bottom: 1em;
-} */
 
 /* ########## Media Queries ########## */
 @media (max-width: 400px) {
@@ -59,12 +58,19 @@ div, a {
         font-size: 0.7em;
         padding: 2rem;
     }
+
+    img {
+        width: 200px;
+    }
 }
 
-@media (max-width: 250px) {
+@media (max-width: 260px) {
     form {
         width: 14rem;
         font-size: 0.6em;
         padding: 1.5rem;
+    }
+    img {
+        width: 150px;
     }
 }

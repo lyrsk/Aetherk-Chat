@@ -7,9 +7,9 @@ label {
 input {
     border: none;
     outline: none;
-    color: white;
+    color: #131313;
     background-color: transparent;
-    border-bottom: 1px solid #ffffff;
+    border-bottom: 1px solid #131313;
     font-size: 1em;
     margin-left: 0.5em;
     margin-right: 0.8em;
@@ -18,14 +18,14 @@ input {
 }
 
 input:focus {
-    border-bottom: 1px solid #fb5600;
+    border-bottom: 1px solid #1E90FF;
 }
 
 ::placeholder {
-    color: rgba(255, 255, 255, 0.505);
+    color: rgba(65, 65, 65, 0.505);
 }
 
 svg {
-    color: white;
+    color: #131313;
 }
 

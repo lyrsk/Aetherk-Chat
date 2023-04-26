@@ -1,6 +1,6 @@
 button {
-    color: white;
-    background-color: #fb5600;
+    color: whitesmoke;
+    background-color: #131313;
     font-size: 1em;
     cursor: pointer;
     border: none;
@@ -16,5 +16,8 @@ button {
 }
 
 button:hover {
-    background-color: #FF6C00;
+    background-color: #12579c;
+}
+button:active {
+    background-color: #0f4377;
 }
