@@ -9,8 +9,6 @@ export default function Login () {
       linkAccount='/register'
       account={{ children: '¿No tienes cuenta? ¡Regístrate!' }}
     >
-      <h1>Logo</h1>
-
       <InputForm id='username' type='text' placeholder='Usuario' autoComplete='off'>
         <FaUserAlt />
       </InputForm>

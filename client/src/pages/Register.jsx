@@ -27,8 +27,6 @@ export default function Register () {
       account={{ children: '¿Ya tienes cuenta? ¡Inicia sesión!' }}
       onSubmit={(event) => handleSubmit(event)}
     >
-      <h1>Logo</h1>
-
       <InputForm
         id='user' name='user' type='text' placeholder='Ingrese su usuario' autoComplete='off'
         onChange={(e) => handleChange(e)}
