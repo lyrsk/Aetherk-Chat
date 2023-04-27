@@ -4,7 +4,7 @@ export function InputForm ({ children, ...props }) {
   return (
     <label>
       {children}
-      <input {...props} required />
+      <input {...props} />
     </label>
   )
 }
