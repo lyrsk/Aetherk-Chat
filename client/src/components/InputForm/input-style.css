@@ -17,12 +17,26 @@ input {
     width: 100%;
 }
 
+
 input:focus {
     border-bottom: 1px solid #1E90FF;
 }
 
 ::placeholder {
     color: rgba(65, 65, 65, 0.505);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: none !important; 
+    -webkit-text-fill-color: #131313 !important; 
+    transition: background-color 5000s ease-in-out 0s; 
+}
+
+input:autofill {
+    background: transparent;
 }
 
 svg {

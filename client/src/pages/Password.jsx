@@ -9,7 +9,7 @@ export default function Password () {
       linkAccount='/login'
       account={{ children: 'o ¡Inicia sesión!' }}
     >
-      <InputForm id='email' type='email' placeholder='Ingrese su correo' autoComplete='off'>
+      <InputForm id='email' type='email' placeholder='Ingrese su correo'>
         <GrMail />
       </InputForm>
 
