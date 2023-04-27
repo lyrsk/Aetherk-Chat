@@ -4,7 +4,6 @@ form {
     justify-content: center;
     width: 22rem;
     height: auto;
-    /* background-color: #23103A; */
     background-color: whitesmoke;
     margin: 7rem auto;
     padding: 2rem;
@@ -12,13 +11,10 @@ form {
 }
 div a {
     color: #646464;
-    font-size: 0.8em;
-    margin: 0.1em;
+    font-size: 0.9em;
+    margin-top: 0.2em;
+    margin-right: 0.1em;
 }
-
-/* input {
-    border-radius: 3em !important;
-} */
 
 a {
     font-size: 1em;
@@ -30,13 +26,6 @@ a:hover {
 
 a:active {
     color: #0f4377;
-}
-
-h1 {
-    font-size: 2em;
-    margin: 0 0 1em 0;
-    display: flex;
-    justify-content: center;
 }
 
 img {
@@ -53,6 +42,25 @@ h1, a {
 div, a {
     display: flex;
     justify-content: center;
+}
+
+.error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgb(224, 3, 3);
+    font-size: 0.8em;
+    margin-top: 0.2em;
+}
+
+.success {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: green;
+    font-size: 1em;
 }
 
 /* ########## Media Queries ########## */
