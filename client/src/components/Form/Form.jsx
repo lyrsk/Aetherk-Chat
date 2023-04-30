@@ -1,4 +1,4 @@
-import './form-style.css'
+import './css/form-style.css'
 import Logo from '../../assets/logo-black.png'
 
 export function Form ({ children, linkAccount, account, ...props }) {

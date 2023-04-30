@@ -1,4 +1,4 @@
-import './input-style.css'
+import './css/input-style.css'
 
 export function InputForm ({ children, ...props }) {
   return (
