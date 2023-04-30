@@ -131,7 +131,7 @@ export default function Register () {
             {touched.confirmPassword && errors.confirmPassword && <div className='error'>{errors.confirmPassword}</div>}
 
             <ButtonForm type='submit'>Crear cuenta</ButtonForm>
-            {formularioEnviado && <p className='success'>¡Usuario creado con éxito!</p>}
+            {formularioEnviado && <p className='success'>Ingrese a su email para confirmar la cuenta</p>}
           </Form>
         )}
       </Formik>
