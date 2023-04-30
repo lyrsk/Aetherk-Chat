@@ -2,11 +2,9 @@ import { ButtonForm } from '../components/ButtonForm/ButtonForm' // ButtonForm c
 import { Form } from '../components/Form/Form' // Form componente
 import { InputForm } from '../components/InputForm/InputForm' // InputForm componente
 import { AiOutlineUser, AiOutlineMail, AiOutlineLock } from 'react-icons/ai' // Iconos
-import { useState } from 'react'
 import { Formik } from 'formik'
 
 export default function Register () {
-  const [formularioEnviado, cambiarFormularioEnviado] = useState(false)
   return (
     <>
       <Formik
@@ -60,8 +58,6 @@ export default function Register () {
         }}
         onSubmit={(values, { resetForm }) => {
           resetForm()
-          cambiarFormularioEnviado(true)
-          setTimeout(() => cambiarFormularioEnviado(false), 5000)
         }}
       >
         {({
@@ -131,7 +127,6 @@ export default function Register () {
             {touched.confirmPassword && errors.confirmPassword && <div className='error'>{errors.confirmPassword}</div>}
 
             <ButtonForm type='submit'>Crear cuenta</ButtonForm>
-            {formularioEnviado && <p className='success'>Ingrese a su email para confirmar la cuenta</p>}
           </Form>
         )}
       </Formik>
