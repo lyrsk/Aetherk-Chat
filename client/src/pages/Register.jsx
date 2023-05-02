@@ -2,14 +2,18 @@ import { ButtonForm } from '../components/ButtonForm/ButtonForm' // ButtonForm c
 import { Form } from '../components/Form/Form' // Form componente
 import { InputForm } from '../components/InputForm/InputForm' // InputForm componente
 import { AiOutlineUser, AiOutlineMail, AiOutlineLock } from 'react-icons/ai' // Iconos
+import { useNavigate } from 'react-router-dom' // Navegación
 import { Formik } from 'formik'
+import axios from 'axios'
+import { registerRoutes } from '../utils/APIRoutes'
 
 export default function Register () {
+  const navigate = useNavigate()
   return (
     <>
       <Formik
         initialValues={{
-          user: '',
+          username: '',
           email: '',
           password: '',
           confirmPassword: ''
@@ -17,10 +21,10 @@ export default function Register () {
         validate={(values) => {
           const errors = {}
 
-          if (!values.user) {
-            errors.user = 'Ingrese un usuario válido'
-          } else if (!/^[a-zA-Z0-9._-]{4,32}(?<![-';%])$/i.test(values.user)) {
-            errors.user = 'El usuario debe contener entre 4 y 32 caracteres y puede contener letras, números, guiones bajos y puntos.'
+          if (!values.username) {
+            errors.username = 'Ingrese un usuario válido'
+          } else if (!/^[a-zA-Z0-9._-]{4,32}(?<![-';%])$/i.test(values.username)) {
+            errors.username = 'El usuario debe contener entre 4 y 32 caracteres y puede contener letras, números, guiones bajos y puntos.'
           }
 
           if (!values.email) {
@@ -56,8 +60,21 @@ export default function Register () {
 
           return errors
         }}
-        onSubmit={(values, { resetForm }) => {
+        onSubmit={async (values, { resetForm }) => {
           resetForm()
+          console.log('Enviando formulario', registerRoutes)
+          const { username, email, password } = values
+          const { data } = await axios.post(registerRoutes, { username, email, password })
+          console.log(data)
+          if (data.status === false) {
+            console.log(data.message)
+          }
+          if (data.status === true) {
+            console.log('test 1')
+            localStorage.setItem('Aetherk', JSON.stringify(data.user))
+            navigate('/')
+            console.log('test 2')
+          }
         }}
       >
         {({
@@ -75,17 +92,17 @@ export default function Register () {
             account={{ children: 'o ¡Inicia sesión!' }}
           >
             <InputForm
-              id='user'
-              name='user'
+              id='username'
+              name='username'
               type='text'
               placeholder='Ingrese su usuario'
-              value={values.user}
+              value={values.username}
               onChange={handleChange}
               onBlur={handleBlur}
             >
               <AiOutlineUser />
             </InputForm>
-            {touched.user && errors.user && <div className='error'>{errors.user}</div>}
+            {touched.username && errors.username && <div className='error'>{errors.username}</div>}
 
             <InputForm
               id='email'
