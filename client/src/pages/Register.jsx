@@ -6,9 +6,17 @@ import { useNavigate } from 'react-router-dom' // Navegación
 import { Formik } from 'formik'
 import axios from 'axios'
 import { registerRoutes } from '../utils/APIRoutes'
+import { useEffect } from 'react'
 
 export default function Register () {
   const navigate = useNavigate()
+
+  useEffect(() => { // Mantiene la sesión iniciada
+    if (localStorage.getItem('Aetherk')) {
+      navigate('/')
+    }
+  }, [])
+
   return (
     <>
       <Formik

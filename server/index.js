@@ -21,6 +21,6 @@ mogoose.connect(process.env.MONGO_URL, {
   .catch(err =>
     console.log(err.message))
 
-const server = app.listen(port, () => {
+app.listen(port, () => {
   console.log(`Servidor en http://localhost:${port}`)
 })
