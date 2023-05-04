@@ -11,7 +11,7 @@ import { useEffect } from 'react'
 export default function Register () {
   const navigate = useNavigate()
 
-  useEffect(() => { // Mantiene la sesión iniciada
+  useEffect(() => {
     if (localStorage.getItem('Aetherk')) {
       navigate('/')
     }

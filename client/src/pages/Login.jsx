@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom' // Navegación
 export default function Login () {
   const navigate = useNavigate()
 
-  useEffect(() => { // Mantiene la sesión iniciada
+  useEffect(() => {
     if (localStorage.getItem('Aetherk')) {
       navigate('/')
     }
