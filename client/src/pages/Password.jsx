@@ -2,18 +2,55 @@ import { ButtonForm } from '../components/ButtonForm/ButtonForm' // ButtonForm c
 import { Form } from '../components/Form/Form' // Form componente
 import { InputForm } from '../components/InputForm/InputForm' // InputForm componente
 import { GrMail } from 'react-icons/gr'// Iconos
+import { Formik } from 'formik'
 
 export default function Password () {
   return (
-    <Form
-      linkAccount='/login'
-      account={{ children: 'o ¡Inicia sesión!' }}
+    <Formik
+      initialValues={{
+        email: ''
+      }}
+      validate={(values) => {
+        const errors = {}
+        if (!values.email) {
+          errors.email = 'Ingrese un correo válido'
+        } else if (
+          !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i.test(values.email)
+        ) {
+          errors.email =
+            'Correo eléctronico inválido'
+        }
+        return errors
+      }}
     >
-      <InputForm id='email' type='email' placeholder='Ingrese su correo'>
-        <GrMail />
-      </InputForm>
+      {({
+        values,
+        errors,
+        touched,
+        handleSubmit,
+        handleChange,
+        handleBlur
+      }) => (
+        <Form
+          linkAccount='/login'
+          account={{ children: 'o ¡Inicia sesión!' }}
+        >
+          <InputForm
+            id='email'
+            name='email'
+            type='email'
+            placeholder='Ingrese su correo'
+            value={values.email}
+            onChange={handleChange}
+            onBlur={handleBlur}
+          >
+            <GrMail />
+          </InputForm>
+          {touched.email && errors.email && <div className='error'>{errors.email}</div>}
 
-      <ButtonForm>Cambiar contraseña</ButtonForm>
-    </Form>
+          <ButtonForm>Cambiar contraseña</ButtonForm>
+        </Form>
+      )}
+    </Formik>
   )
 }
