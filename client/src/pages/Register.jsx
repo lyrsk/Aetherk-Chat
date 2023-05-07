@@ -1,6 +1,7 @@
-import { ButtonForm } from '../components/ButtonForm/ButtonForm' // ButtonForm componente
-import { Form } from '../components/Form/Form' // Form componente
-import { InputForm } from '../components/InputForm/InputForm' // InputForm componente
+/* eslint-disable no-undef */
+import ButtonForm from '../components/ButtonForm/ButtonForm' // ButtonForm componente
+import Form from '../components/Form/Form' // Form componente
+import InputForm from '../components/InputForm/InputForm' // InputForm componente
 import { AiOutlineUser, AiOutlineMail, AiOutlineLock } from 'react-icons/ai' // Iconos
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom' // Navegación
@@ -11,11 +12,11 @@ import { registerRoutes } from '../utils/APIRoutes'
 export default function Register () {
   const navigate = useNavigate()
 
-  useEffect(() => {
-    if (localStorage.getItem('Aetherk')) {
-      navigate('/')
-    }
-  }, [])
+  // useEffect(() => {
+  //   if (localStorage.getItem('Aetherk')) {
+  //     navigate('/')
+  //   }
+  // }, [])
 
   return (
     <>
@@ -73,7 +74,6 @@ export default function Register () {
           console.log('Enviando formulario', registerRoutes)
           const { username, email, password } = values
           const { data } = await axios.post(registerRoutes, { username, email, password })
-          console.log(data)
           if (data.status === false) {
             console.log(data.message)
           }

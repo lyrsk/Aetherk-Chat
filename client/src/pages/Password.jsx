@@ -1,8 +1,10 @@
-import { ButtonForm } from '../components/ButtonForm/ButtonForm' // ButtonForm componente
-import { Form } from '../components/Form/Form' // Form componente
-import { InputForm } from '../components/InputForm/InputForm' // InputForm componente
+import ButtonForm from '../components/ButtonForm/ButtonForm' // ButtonForm componente
+import Form from '../components/Form/Form' // Form componente
+import InputForm from '../components/InputForm/InputForm' // InputForm componente
 import { GrMail } from 'react-icons/gr'// Iconos
 import { Formik } from 'formik'
+import axios from 'axios'
+import { passwordRoutes } from '../utils/APIRoutes'
 
 export default function Password () {
   return (
@@ -22,6 +24,15 @@ export default function Password () {
         }
         return errors
       }}
+      onSubmit={async (values, { resetForm }) => {
+        resetForm()
+        console.log('Enviando formulario', passwordRoutes)
+        const { email } = values
+        const { data } = await axios.post(passwordRoutes, { email })
+        if (data.status === false) {
+          console.log(data.message)
+        }
+      }}
     >
       {({
         values,
@@ -32,6 +43,7 @@ export default function Password () {
         handleBlur
       }) => (
         <Form
+          onSubmit={handleSubmit}
           linkAccount='/login'
           account={{ children: 'o ¡Inicia sesión!' }}
         >
@@ -48,7 +60,7 @@ export default function Password () {
           </InputForm>
           {touched.email && errors.email && <div className='error'>{errors.email}</div>}
 
-          <ButtonForm>Cambiar contraseña</ButtonForm>
+          <ButtonForm type='submit'>Cambiar contraseña</ButtonForm>
         </Form>
       )}
     </Formik>

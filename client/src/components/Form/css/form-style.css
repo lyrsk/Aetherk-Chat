@@ -1,15 +1,15 @@
-form {
+.form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 22rem;
     height: auto;
     background-color: whitesmoke;
-    margin: 7rem auto;
+    margin: 5rem auto;
     padding: 2rem;
     border-radius: 1rem;
 }
-div a {
+.form-account a {
     color: #646464;
     font-size: 0.9em;
     margin-top: 0.2em;
@@ -39,9 +39,16 @@ h1, a {
     text-decoration: none;
 }
 
-div, a {
+.form-account, a {
     display: flex;
     justify-content: center;
+}
+
+.form-forget-password {
+    color: #646464;
+    font-size: 0.9em;
+    margin-top: 0.2em;
+    margin-right: 0.1em;
 }
 
 .error {

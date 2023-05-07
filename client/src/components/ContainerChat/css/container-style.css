@@ -1,0 +1,14 @@
+.container-chat {
+    background-color: #1d1d1d;
+    width: 85vw;
+    height: 85vh;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    border-radius: 0.5rem;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
