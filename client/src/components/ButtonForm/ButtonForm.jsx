@@ -1,11 +1,13 @@
 import './css/button-style.css'
 
-export function ButtonForm ({ children, ...props }) {
+function ButtonForm ({ children, ...props }) {
   return (
-    <div>
+    <div className='button-container'>
       <button {...props}>
         {children}
       </button>
     </div>
   )
 }
+
+export default ButtonForm

@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
-import { ButtonForm } from '../components/ButtonForm/ButtonForm' // ButtonForm componente
-import { Form } from '../components/Form/Form' // Form componente
-import { InputForm } from '../components/InputForm/InputForm' // InputForm componente
+import ButtonForm from '../components/ButtonForm/ButtonForm' // ButtonForm componente
+import Form from '../components/Form/Form' // Form componente
+import InputForm from '../components/InputForm/InputForm' // InputForm componente
 import { FaUserAlt, FaLock } from 'react-icons/fa' // Iconos
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom' // Navegación
@@ -12,11 +12,11 @@ import { loginRoutes } from '../utils/APIRoutes'
 export default function Login () {
   const navigate = useNavigate()
 
-  useEffect(() => {
-    if (localStorage.getItem('Aetherk')) {
-      navigate('/')
-    }
-  }, [])
+  // useEffect(() => {
+  //   if (localStorage.getItem('Aetherk')) {
+  //     navigate('/')
+  //   }
+  // }, [])
 
   return (
     <>
@@ -39,17 +39,15 @@ export default function Login () {
         onSubmit={async (values, { resetForm }) => {
           resetForm()
           console.log('Enviando formulario', loginRoutes)
+
           const { username, password } = values
           const { data } = await axios.post(loginRoutes, { username, password })
-          console.log(data)
           if (data.status === false) {
             console.log(data.message)
           }
           if (data.status === true) {
-            console.log('test 1')
             localStorage.setItem('Aetherk', JSON.stringify(data.user))
             navigate('/')
-            console.log('test 2')
           }
         }}
       >
@@ -92,8 +90,8 @@ export default function Login () {
 
             <ButtonForm type='submit'>Iniciar sesión</ButtonForm>
 
-            <div id='form-forget-password'>
-              <a href='/password'>¿Olvidaste tu contraseña?</a>
+            <div>
+              <a href='/password' className='form-forget-password'>¿Olvidaste tu contraseña?</a>
             </div>
           </Form>
         )}

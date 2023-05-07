@@ -1,7 +1,7 @@
 import bcrypt from 'bcrypt'
 import { User } from '../model/userModel.js'
 
-export const register = async (req, res, next) => {
+async function register (req, res, next) {
   try {
     const { username, email, password } = req.body
 
@@ -29,7 +29,7 @@ export const register = async (req, res, next) => {
   }
 }
 
-export const login = async (req, res, next) => {
+async function login (req, res, next) {
   try {
     const { username, password } = req.body
 
@@ -54,3 +54,25 @@ export const login = async (req, res, next) => {
     next(ex)
   }
 }
+
+async function changePassword (req, res, next) {
+  try {
+    const { email } = req.body
+
+    const user = await User.findOne({ email })
+    if (!user) {
+      return res.json({
+        msg: 'El email ingresado no existe',
+        status: false
+      })
+    }
+
+    // Resto del código para cambiar la contraseña
+    // ...
+    return res.json({ status: true })
+  } catch (ex) {
+    next(ex)
+  }
+}
+
+export { register, login, changePassword }

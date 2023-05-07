@@ -1,6 +1,6 @@
 import './css/input-style.css'
 
-export function InputForm ({ children, ...props }) {
+function InputForm ({ children, ...props }) {
   return (
     <label>
       {children}
@@ -8,3 +8,5 @@ export function InputForm ({ children, ...props }) {
     </label>
   )
 }
+
+export default InputForm

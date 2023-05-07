@@ -1,12 +1,12 @@
 import './css/form-style.css'
 import Logo from '../../assets/logo-black.png'
 
-export function Form ({ children, linkAccount, account, ...props }) {
+function Form ({ children, linkAccount, account, ...props }) {
   return (
-    <form {...props}>
+    <form {...props} className='form'>
       <img src={Logo} alt='Aether Logo' />
       {children}
-      <div>
+      <div className='form-account'>
         <a href={linkAccount}>
           {account.children}
         </a>
@@ -14,3 +14,5 @@ export function Form ({ children, linkAccount, account, ...props }) {
     </form>
   )
 }
+
+export default Form
