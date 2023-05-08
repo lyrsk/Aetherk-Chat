@@ -1,0 +1,22 @@
+#logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+#logo {
+    width: 250px;
+}
+
+@media (max-width: 400px) {
+    #logo {
+        width: 200px;
+    }
+}
+
+@media (max-width: 260px) {
+    #logo {
+        width: 150px;
+    }
+}

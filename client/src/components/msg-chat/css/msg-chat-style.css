@@ -1,0 +1,15 @@
+.msg-chat-container {
+    display: grid;
+    grid-template-rows: min-content;
+    margin-left: 1px;
+}
+
+.msg-chat {
+    /* background-color: rgb(30, 30, 30); */
+       /* background-color: rgb(94, 94, 94); */
+       background-color: rgb(39, 39, 39);
+}
+
+.contact-profile {
+    width: 35px;
+}

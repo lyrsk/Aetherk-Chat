@@ -2,9 +2,9 @@ import './css/input-style.css'
 
 function InputForm ({ children, ...props }) {
   return (
-    <label>
+    <label className='label-form'>
       {children}
-      <input {...props} />
+      <input {...props} className='input-form' />
     </label>
   )
 }
