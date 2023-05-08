@@ -3,7 +3,7 @@
     justify-content: center;
 }
 
-button {
+.button-container button {
     color: whitesmoke;
     background-color: #131313;
     font-size: 1em;
@@ -16,12 +16,12 @@ button {
     height: auto;
     display: flex;
     justify-content: center;
-
 }
 
-button:hover {
+.button-container button:hover {
     background-color: #12579c;
 }
-button:active {
+
+.button-container button:active {
     background-color: #0f4377;
 }

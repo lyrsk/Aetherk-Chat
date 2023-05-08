@@ -1,7 +1,6 @@
-/* eslint-disable no-undef */
-import ButtonForm from '../components/ButtonForm/ButtonForm' // ButtonForm componente
-import Form from '../components/Form/Form' // Form componente
-import InputForm from '../components/InputForm/InputForm' // InputForm componente
+import ButtonForm from '../components/button-form/ButtonForm' // ButtonForm componente
+import Form from '../components/form/Form' // Form componente
+import InputForm from '../components/input-form/InputForm' // InputForm componente
 import { AiOutlineUser, AiOutlineMail, AiOutlineLock } from 'react-icons/ai' // Iconos
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom' // Navegación
@@ -108,7 +107,7 @@ export default function Register () {
               onChange={handleChange}
               onBlur={handleBlur}
             >
-              <AiOutlineUser />
+              <AiOutlineUser className='icon-form' />
             </InputForm>
             {touched.username && errors.username && <div className='error'>{errors.username}</div>}
 
@@ -121,7 +120,7 @@ export default function Register () {
               onChange={handleChange}
               onBlur={handleBlur}
             >
-              <AiOutlineMail />
+              <AiOutlineMail className='icon-form' />
             </InputForm>
             {touched.email && errors.email && <div className='error'>{errors.email}</div>}
 
@@ -134,7 +133,7 @@ export default function Register () {
               onChange={handleChange}
               onBlur={handleBlur}
             >
-              <AiOutlineLock />
+              <AiOutlineLock className='icon-form' />
             </InputForm>
             {touched.password && errors.password && <div className='error'>{errors.password}</div>}
 
@@ -147,7 +146,7 @@ export default function Register () {
               onChange={handleChange}
               onBlur={handleBlur}
             >
-              <AiOutlineLock />
+              <AiOutlineLock className='icon-form' />
             </InputForm>
             {touched.confirmPassword && errors.confirmPassword && <div className='error'>{errors.confirmPassword}</div>}
 

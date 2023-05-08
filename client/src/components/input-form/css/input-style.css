@@ -1,10 +1,10 @@
-label {
+.label-form {
     display: flex;
     align-items: center;
     padding: 0.5rem;
 }
 
-input {
+.input-form {
     border: none;
     outline: none;
     color: #131313;
@@ -18,8 +18,7 @@ input {
     width: 100%;
 }
 
-
-input:focus {
+.input-form:focus {
     border-bottom: 1px solid #1E90FF;
 }
 
@@ -27,20 +26,20 @@ input:focus {
     color: rgba(65, 65, 65, 0.505);
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active  {
+.input-form:-webkit-autofill,
+.input-form:-webkit-autofill:hover, 
+.input-form:-webkit-autofill:focus, 
+.input-form:-webkit-autofill:active  {
     -webkit-box-shadow: none !important; 
     -webkit-text-fill-color: #131313 !important; 
     transition: background-color 5000s ease-in-out 0s; 
 }
 
-input:autofill {
+.input-form:autofill {
     background: transparent;
 }
 
-svg {
+.icon-form {
     color: #131313;
 }
 

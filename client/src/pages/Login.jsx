@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
-import ButtonForm from '../components/ButtonForm/ButtonForm' // ButtonForm componente
-import Form from '../components/Form/Form' // Form componente
-import InputForm from '../components/InputForm/InputForm' // InputForm componente
+import ButtonForm from '../components/button-form/ButtonForm' // ButtonForm componente
+import Form from '../components/form/Form' // Form componente
+import InputForm from '../components/input-form/InputForm' // InputForm componente
 import { FaUserAlt, FaLock } from 'react-icons/fa' // Iconos
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom' // Navegación
@@ -72,7 +72,7 @@ export default function Login () {
               onChange={handleChange}
               onBlur={handleBlur}
             >
-              <FaUserAlt />
+              <FaUserAlt className='icon-form' />
             </InputForm>
             {touched.username && errors.username && <div className='error'>{errors.username}</div>}
 
@@ -84,7 +84,7 @@ export default function Login () {
               onChange={handleChange}
               onBlur={handleBlur}
             >
-              <FaLock />
+              <FaLock className='icon-form' />
             </InputForm>
             {touched.password && errors.password && <div className='error'>{errors.password}</div>}
 

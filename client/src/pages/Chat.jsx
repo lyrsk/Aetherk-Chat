@@ -1,13 +1,14 @@
-import ContainerChat from '../components/ContainerChat/ContainerChat'
-import Logo from '../assets/logo-white.png'
+import ChatContainer from '../components/chat-container/ChatContainer'
+import Contacts from '../components/contacts/Contacts'
+import MsgChat from '../components/msg-chat/MsgChat'
 
 export default function Chat () {
   return (
     <>
-      <div className='logo-container'>
-        <img src={Logo} alt='Aetherk Logo' className='Logo' />
-      </div>
-      <ContainerChat />
+      <ChatContainer>
+        <Contacts />
+        <MsgChat />
+      </ChatContainer>
     </>
   )
 }

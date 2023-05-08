@@ -1,6 +1,6 @@
-import ButtonForm from '../components/ButtonForm/ButtonForm' // ButtonForm componente
-import Form from '../components/Form/Form' // Form componente
-import InputForm from '../components/InputForm/InputForm' // InputForm componente
+import ButtonForm from '../components/button-form/ButtonForm' // ButtonForm componente
+import Form from '../components/form/Form' // Form componente
+import InputForm from '../components/input-form/InputForm' // InputForm componente
 import { GrMail } from 'react-icons/gr'// Iconos
 import { Formik } from 'formik'
 import axios from 'axios'
@@ -56,7 +56,7 @@ export default function Password () {
             onChange={handleChange}
             onBlur={handleBlur}
           >
-            <GrMail />
+            <GrMail className='icon-form' />
           </InputForm>
           {touched.email && errors.email && <div className='error'>{errors.email}</div>}
 
