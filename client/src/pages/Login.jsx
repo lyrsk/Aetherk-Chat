@@ -7,7 +7,7 @@ import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom' // Navegación
 import { Formik } from 'formik'
 import axios from 'axios'
-import { loginRoutes } from '../utils/APIRoutes'
+import { loginRoute } from '../utils/APIRoutes'
 
 export default function Login () {
   const navigate = useNavigate()
@@ -38,10 +38,10 @@ export default function Login () {
         }}
         onSubmit={async (values, { resetForm }) => {
           resetForm()
-          console.log('Enviando formulario', loginRoutes)
+          console.log('Enviando formulario', loginRoute)
 
           const { username, password } = values
-          const { data } = await axios.post(loginRoutes, { username, password })
+          const { data } = await axios.post(loginRoute, { username, password })
           if (data.status === false) {
             console.log(data.message)
           }

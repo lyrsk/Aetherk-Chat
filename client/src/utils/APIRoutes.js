@@ -1,4 +1,6 @@
 const host = 'http://localhost:5000'
-export const registerRoutes = `${host}/api/auth/register`
-export const loginRoutes = `${host}/api/auth/login`
-export const passwordRoutes = `${host}/api/auth/password`
+export const registerRoute = `${host}/api/auth/register`
+export const loginRoute = `${host}/api/auth/login`
+export const passwordRoute = `${host}/api/auth/password`
+export const allUsersRoute = `${host}/api/allusers`
+export const setAvatarRoute = `${host}/api/setAvatar`

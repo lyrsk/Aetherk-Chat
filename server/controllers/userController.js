@@ -75,4 +75,18 @@ async function changePassword (req, res, next) {
   }
 }
 
-export { register, login, changePassword }
+async function getAllUsers (req, res, next) {
+  try {
+    const users = await User.find({ _id: { $ne: req.params.id } }).select([
+      'email',
+      'username',
+      'avatarImage',
+      '_id'
+    ])
+    return res.json(users)
+  } catch (ex) {
+    next(ex)
+  }
+}
+
+export { register, login, changePassword, getAllUsers }
