@@ -1,6 +1,6 @@
 .msg-chat-container {
     display: grid;
-    grid-template-rows: min-content;
+    grid-template-rows: min-content auto min-content;
     margin-left: 1px;
 }
 
@@ -9,7 +9,20 @@
        /* background-color: rgb(94, 94, 94); */
        background-color: rgb(39, 39, 39);
 }
+.chat-contact-profile {
+    display: flex;
+    align-items: center;
+    margin-left: 1em;
+}
 
-.contact-profile {
-    width: 35px;
+.chat-contact-picture {
+    width: 40px;
+
+}
+
+.chat-contact-name {
+    color: white;
+    font-size: 0.9em;
+    margin-left: 0.7em;
+    margin-top: 0.1em;
 }

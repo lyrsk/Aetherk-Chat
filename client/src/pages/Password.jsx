@@ -4,7 +4,7 @@ import InputForm from '../components/input-form/InputForm' // InputForm componen
 import { GrMail } from 'react-icons/gr'// Iconos
 import { Formik } from 'formik'
 import axios from 'axios'
-import { passwordRoutes } from '../utils/APIRoutes'
+import { passwordRoute } from '../utils/APIRoutes'
 
 export default function Password () {
   return (
@@ -26,9 +26,9 @@ export default function Password () {
       }}
       onSubmit={async (values, { resetForm }) => {
         resetForm()
-        console.log('Enviando formulario', passwordRoutes)
+        console.log('Enviando formulario', passwordRoute)
         const { email } = values
-        const { data } = await axios.post(passwordRoutes, { email })
+        const { data } = await axios.post(passwordRoute, { email })
         if (data.status === false) {
           console.log(data.message)
         }
