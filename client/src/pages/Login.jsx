@@ -1,13 +1,13 @@
-/* eslint-disable no-undef */
-import ButtonForm from '../components/button-form/ButtonForm' // ButtonForm componente
-import Form from '../components/form/Form' // Form componente
-import InputForm from '../components/input-form/InputForm' // InputForm componente
-import { FaUserAlt, FaLock } from 'react-icons/fa' // Iconos
 import { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom' // Navegación
-import { Formik } from 'formik'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { loginRoute } from '../utils/APIRoutes'
+import { Formik } from 'formik'
+// Componentes
+import ButtonForm from '../components/button-form/ButtonForm'
+import Form from '../components/form/Form'
+import InputForm from '../components/input-form/InputForm'
+import { FaUserAlt, FaLock } from 'react-icons/fa'
 
 export default function Login () {
   const navigate = useNavigate()

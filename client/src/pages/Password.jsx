@@ -1,10 +1,11 @@
-import ButtonForm from '../components/button-form/ButtonForm' // ButtonForm componente
-import Form from '../components/form/Form' // Form componente
-import InputForm from '../components/input-form/InputForm' // InputForm componente
-import { GrMail } from 'react-icons/gr'// Iconos
-import { Formik } from 'formik'
 import axios from 'axios'
 import { passwordRoute } from '../utils/APIRoutes'
+import { Formik } from 'formik'
+// Componentes
+import ButtonForm from '../components/button-form/ButtonForm'
+import Form from '../components/form/Form'
+import InputForm from '../components/input-form/InputForm'
+import { GrMail } from 'react-icons/gr'
 
 export default function Password () {
   return (
