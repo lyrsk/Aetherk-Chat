@@ -1,12 +1,13 @@
-import ButtonForm from '../components/button-form/ButtonForm' // ButtonForm componente
-import Form from '../components/form/Form' // Form componente
-import InputForm from '../components/input-form/InputForm' // InputForm componente
-import { AiOutlineUser, AiOutlineMail, AiOutlineLock } from 'react-icons/ai' // Iconos
 import { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom' // Navegación
-import { Formik } from 'formik'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { registerRoute } from '../utils/APIRoutes'
+import { Formik } from 'formik'
+// Componentes
+import ButtonForm from '../components/button-form/ButtonForm'
+import Form from '../components/form/Form'
+import InputForm from '../components/input-form/InputForm'
+import { AiOutlineUser, AiOutlineMail, AiOutlineLock } from 'react-icons/ai'
 
 export default function Register () {
   const navigate = useNavigate()

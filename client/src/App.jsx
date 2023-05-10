@@ -4,7 +4,6 @@ import Chat from './pages/Chat.jsx'
 import Login from './pages/Login.jsx'
 import Register from './pages/Register.jsx'
 import Password from './pages/Password.jsx'
-// import SetAvatar from './pages/SetAvatar.jsx'
 import './App.css'
 
 function App () {
@@ -15,7 +14,6 @@ function App () {
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/password' element={<Password />} />
-        {/* <Route path='/setAvatar' element={<SetAvatar />} /> */}
       </Routes>
     </BrowserRouter>
   )
