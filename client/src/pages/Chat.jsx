@@ -10,24 +10,24 @@ export default function Chat () {
   const [contacts, setContacts] = useState([])
   const [currentUser, setCurrentUser] = useState({ undefined })
 
-  useEffect(async () => {
-    if (!localStorage.getItem('Aetherk')) {
-      navigate('/login')
-    } else {
-      setCurrentUser(await JSON.parse(localStorage.getItem('Aetherk')))
-    }
-  }, [])
+  // useEffect(async () => {
+  //   if (!localStorage.getItem('Aetherk')) {
+  //     navigate('/login')
+  //   } else {
+  //     setCurrentUser(await JSON.parse(localStorage.getItem('Aetherk')))
+  //   }
+  // }, [])
 
-  useEffect(async () => {
-    if (currentUser) {
-      if (currentUser.isAvatarImageSet) {
-        const data = await axios.get(`${allUsersRoute}/${currentUser._id}`)
-        setContacts(data.data)
-      } else {
-        navigate('/setAvatar')
-      }
-    }
-  }, [currentUser])
+  // useEffect(async () => {
+  //   if (currentUser) {
+  //     if (currentUser.isAvatarImageSet) {
+  //       const data = await axios.get(`${allUsersRoute}/${currentUser._id}`)
+  //       setContacts(data.data)
+  //     } else {
+  //       navigate('/setAvatar')
+  //     }
+  //   }
+  // }, [currentUser])
 
   return (
     <>
