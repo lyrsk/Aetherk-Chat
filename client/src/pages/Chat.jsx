@@ -1,10 +1,9 @@
-import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
-import axios from 'axios'
-// Componentes
 import ChatContainer from '../components/chat-container/ChatContainer'
 import Contacts from '../components/contacts/Contacts'
 import MsgChat from '../components/msg-chat/MsgChat'
+import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 export default function Chat () {
   const navigate = useNavigate()
