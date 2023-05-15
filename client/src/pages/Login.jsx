@@ -1,13 +1,12 @@
-import { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
-import axios from 'axios'
-import { loginRoute } from '../utils/APIRoutes'
-import { Formik } from 'formik'
-// Componentes
 import ButtonForm from '../components/button-form/ButtonForm'
 import Form from '../components/form/Form'
 import InputForm from '../components/input-form/InputForm'
 import { FaUserAlt, FaLock } from 'react-icons/fa'
+import { Formik } from 'formik'
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
+import { loginRoute } from '../utils/APIRoutes'
 
 export default function Login () {
   const navigate = useNavigate()

@@ -1,11 +1,10 @@
-import axios from 'axios'
-import { passwordRoute } from '../utils/APIRoutes'
-import { Formik } from 'formik'
-// Componentes
 import ButtonForm from '../components/button-form/ButtonForm'
 import Form from '../components/form/Form'
 import InputForm from '../components/input-form/InputForm'
 import { GrMail } from 'react-icons/gr'
+import { Formik } from 'formik'
+import axios from 'axios'
+import { passwordRoute } from '../utils/APIRoutes'
 
 export default function Password () {
   return (

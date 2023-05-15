@@ -1,13 +1,12 @@
-import { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
-import axios from 'axios'
-import { registerRoute } from '../utils/APIRoutes'
-import { Formik } from 'formik'
-// Componentes
 import ButtonForm from '../components/button-form/ButtonForm'
 import Form from '../components/form/Form'
 import InputForm from '../components/input-form/InputForm'
 import { AiOutlineUser, AiOutlineMail, AiOutlineLock } from 'react-icons/ai'
+import { Formik } from 'formik'
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
+import { registerRoute } from '../utils/APIRoutes'
 
 export default function Register () {
   const navigate = useNavigate()
