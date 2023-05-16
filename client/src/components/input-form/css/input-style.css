@@ -4,7 +4,7 @@
     padding: 0.5rem;
 }
 
-.input-form {
+.label-form input {
     border: none;
     outline: none;
     color: #131313;
@@ -18,28 +18,28 @@
     width: 100%;
 }
 
-.input-form:focus {
+.label-form input:focus {
     border-bottom: 1px solid #1E90FF;
 }
 
-.input-form::placeholder {
+.label-form input::placeholder {
     color: rgba(65, 65, 65, 0.505);
 }
 
-.input-form:-webkit-autofill,
-.input-form:-webkit-autofill:hover, 
-.input-form:-webkit-autofill:focus, 
-.input-form:-webkit-autofill:active  {
+.label-form input:-webkit-autofill,
+.label-form input:-webkit-autofill:hover, 
+.label-form input:-webkit-autofill:focus, 
+.label-form input:-webkit-autofill:active  {
     -webkit-box-shadow: none !important; 
     -webkit-text-fill-color: #131313 !important; 
     transition: background-color 5000s ease-in-out 0s; 
 }
 
-.input-form:autofill {
+.label-form input:autofill {
     background: transparent;
 }
 
 .icon-form {
     color: #131313;
+    margin-top: 0.5em;
 }
-

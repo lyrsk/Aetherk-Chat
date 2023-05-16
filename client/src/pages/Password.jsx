@@ -50,6 +50,7 @@ export default function Password () {
           <InputForm
             id='email'
             name='email'
+            className={touched.email && errors.email ? 'error' : ''}
             type='email'
             placeholder='Ingrese su correo'
             value={values.email}
@@ -58,7 +59,7 @@ export default function Password () {
           >
             <GrMail className='icon-form' />
           </InputForm>
-          {touched.email && errors.email && <div className='error'>{errors.email}</div>}
+          {touched.email && errors.email && <small className='error'>{errors.email}</small>}
 
           <ButtonForm type='submit'>Cambiar contraseña</ButtonForm>
         </Form>
