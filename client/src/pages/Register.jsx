@@ -101,6 +101,7 @@ export default function Register () {
             <InputForm
               id='username'
               name='username'
+              className={touched.username && errors.username ? 'error' : ''}
               type='text'
               placeholder='Ingrese su usuario'
               value={values.username}
@@ -109,11 +110,12 @@ export default function Register () {
             >
               <AiOutlineUser className='icon-form' />
             </InputForm>
-            {touched.username && errors.username && <div className='error'>{errors.username}</div>}
+            {touched.username && errors.username && <small className='error'>{errors.username}</small>}
 
             <InputForm
               id='email'
               name='email'
+              className={touched.email && errors.email ? 'error' : ''}
               type='email'
               placeholder='Ingrese su correo'
               value={values.email}
@@ -122,11 +124,12 @@ export default function Register () {
             >
               <AiOutlineMail className='icon-form' />
             </InputForm>
-            {touched.email && errors.email && <div className='error'>{errors.email}</div>}
+            {touched.email && errors.email && <small className='error'>{errors.email}</small>}
 
             <InputForm
               id='password'
               name='password'
+              className={touched.password && errors.password ? 'error' : ''}
               type='password'
               placeholder='Ingrese su contraseña'
               value={values.password}
@@ -135,11 +138,12 @@ export default function Register () {
             >
               <AiOutlineLock className='icon-form' />
             </InputForm>
-            {touched.password && errors.password && <div className='error'>{errors.password}</div>}
+            {touched.password && errors.password && <small className='error'>{errors.password}</small>}
 
             <InputForm
               id='confirmPassword'
               name='confirmPassword'
+              className={touched.confirmPassword && errors.confirmPassword ? 'error' : ''}
               type='password'
               placeholder='Confirme su contraseña'
               value={values.confirmPassword}
@@ -148,7 +152,7 @@ export default function Register () {
             >
               <AiOutlineLock className='icon-form' />
             </InputForm>
-            {touched.confirmPassword && errors.confirmPassword && <div className='error'>{errors.confirmPassword}</div>}
+            {touched.confirmPassword && errors.confirmPassword && <small className='error'>{errors.confirmPassword}</small>}
 
             <ButtonForm type='submit'>Crear cuenta</ButtonForm>
           </Form>

@@ -4,7 +4,7 @@ function InputForm ({ children, ...props }) {
   return (
     <label className='label-form'>
       {children}
-      <input {...props} className='input-form' />
+      <input {...props} />
     </label>
   )
 }

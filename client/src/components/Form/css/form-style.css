@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 22rem;
+    width: 23rem;
     height: auto;
     background-color: whitesmoke;
     margin: 5rem auto;
@@ -38,14 +38,13 @@
     margin-right: 0.1em;
 }
 
+.form-forget-password:hover {
+    color: #12579c;
+}
+
 .error {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
     color: rgb(224, 3, 3);
-    font-size: 0.8em;
-    margin-top: 0.2em;
+    margin: 0.1em 0 0 2.3em; 
 }
 
 .success {
@@ -56,6 +55,11 @@
     color: green;
     font-size: 1em;
 }
+
+.form input.error {
+    border-bottom: 1px solid rgb(224, 3, 3);
+    color:rgb(224, 3, 3);
+} 
 
 /* ########## Media Queries ########## */
 @media (max-width: 400px) {

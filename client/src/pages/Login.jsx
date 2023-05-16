@@ -65,6 +65,7 @@ export default function Login () {
           >
             <InputForm
               id='username'
+              className={touched.username && errors.username ? 'error' : ''}
               type='text'
               placeholder='Usuario'
               value={values.username}
@@ -73,10 +74,11 @@ export default function Login () {
             >
               <FaUserAlt className='icon-form' />
             </InputForm>
-            {touched.username && errors.username && <div className='error'>{errors.username}</div>}
+            {touched.username && errors.username && <small className='error'>{errors.username}</small>}
 
             <InputForm
               id='password'
+              className={touched.password && errors.password ? 'error' : ''}
               type='password'
               placeholder='Contraseña'
               value={values.password}
@@ -85,7 +87,7 @@ export default function Login () {
             >
               <FaLock className='icon-form' />
             </InputForm>
-            {touched.password && errors.password && <div className='error'>{errors.password}</div>}
+            {touched.password && errors.password && <small className='error'>{errors.password}</small>}
 
             <ButtonForm type='submit'>Iniciar sesión</ButtonForm>
 
