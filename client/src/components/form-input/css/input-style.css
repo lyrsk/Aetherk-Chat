@@ -1,0 +1,45 @@
+.label-form {
+    display: flex;
+    align-items: center;
+    padding: 0.3em;
+}
+
+.label-form input {
+    font-size: 1em;
+    padding: 0.5em;
+    border: none;
+    border-bottom: 1px solid #161616;
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+    margin-right: 0.7em;
+    background-color: transparent;
+    width: 100%;
+}
+
+.label-form input:focus {
+    outline: none;
+    border-bottom: 1px solid #1E90FF;
+}
+
+.label-form input::placeholder {
+    color: rgba(65, 65, 65, 0.505);
+}
+
+
+.label-form input:-webkit-autofill,
+.label-form input:-webkit-autofill:hover, 
+.label-form input:-webkit-autofill:focus, 
+.label-form input:-webkit-autofill:active  {
+    -webkit-box-shadow: none !important; 
+    -webkit-text-fill-color: #131313 !important; 
+    transition: background-color 5000s ease-in-out 0s; 
+}
+
+.label-form input:autofill {
+    background: transparent;
+}
+
+.icon-form {
+    color: #131313;
+    margin-top: 0.3em;
+}
