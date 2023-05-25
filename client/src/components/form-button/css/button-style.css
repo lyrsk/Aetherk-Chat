@@ -1,0 +1,18 @@
+.button-form {
+    font-size: 1em;
+    margin: 0.5em 0 0.8em 0;
+    padding: 0.5em;
+    width: 100%;
+    border: none;
+    border-radius: 0.3em;
+    color: white;
+    background-color: #131313;
+}
+
+.button-form:hover {
+    background-color: #12579c;
+}
+
+.button-form:active {
+    background-color: #0d3d6b;
+}
