@@ -94,6 +94,8 @@ out
 # Nuxt.js build / generate output
 .nuxt
 dist
+dist-ssr
+*.local
 
 # Gatsby files
 .cache/
@@ -141,7 +143,7 @@ dist
 # SvelteKit build / generate output
 .svelte-kit
 
-### react ###
+### React ###
 .DS_*
 **/*.backup.*
 **/*.back.*
