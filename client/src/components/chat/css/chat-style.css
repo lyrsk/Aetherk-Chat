@@ -4,5 +4,5 @@
     background-color: rgb(29, 29, 29);
     border-left: 1px solid rgb(158, 158, 158);
     display: grid;
-    grid-template-rows: 10% auto;
+    grid-template-rows: 10% auto 10%;
 }
