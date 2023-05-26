@@ -1,8 +1,14 @@
+import Container from '../components/container/Container'
+import Contacts from '../components/contacts/Contacts'
+import ChatContainer from '../components/chat/ChatContainer'
+import Header from '../components/header/Header'
+
 function Chat() {
     return (
-        <div>
-            <h1>Chat</h1>
-        </div>
+        <Container>
+            <Contacts />
+            <ChatContainer />
+        </Container>
     )
 }
 

@@ -1,0 +1,10 @@
+.container {
+    width: 85vw;
+    height: 85vh;
+    margin: auto;
+    background-color: rgb(158, 158, 158);
+    display: grid;
+    grid-template-columns: 30% 70%;
+    /* grid-template-rows: 12% 88%; */
+    /* gap: 1px; */
+}
