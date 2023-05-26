@@ -1,0 +1,8 @@
+.header-container {
+    width: auto;
+    height: auto;
+    background-color: rgb(47, 47, 47);
+    border-bottom: 1px solid rgb(158, 158, 158);
+    display: flex;
+    align-items: center;
+}

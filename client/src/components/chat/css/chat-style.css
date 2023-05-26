@@ -1,0 +1,8 @@
+.chat-container {
+    width: auto;
+    height: auto;
+    background-color: rgb(29, 29, 29);
+    border-left: 1px solid rgb(158, 158, 158);
+    display: grid;
+    grid-template-rows: 10% auto;
+}

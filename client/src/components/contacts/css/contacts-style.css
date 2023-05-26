@@ -1,0 +1,12 @@
+.contacts-container {
+    width: auto;
+    height: auto;
+    background-color: rgb(29, 29, 29);
+    display: grid;
+    /* grid-template-rows: 10% 5% auto; */
+    grid-template-rows: 10% auto;
+}
+
+.logo-container-header {
+    
+}
