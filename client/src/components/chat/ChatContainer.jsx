@@ -8,7 +8,9 @@ export default function ChatContainer() {
         <div className='chat-container'>
             <Header />
             <Msg />
-            <ChatInput placeholder='Escriba aquí su mensaje...' />
+            <ChatInput 
+            type='text'
+            placeholder='Escriba aquí su mensaje...' />
         </div>
     )
 }

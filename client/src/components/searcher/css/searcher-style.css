@@ -1,6 +1,33 @@
-.searcher-container {
+.searcher-container{
     width: auto;
     height: auto;
     background-color: rgb(67, 67, 67);
     border-bottom: 1px solid rgb(158, 158, 158);
+    display: grid;
+    grid-template-columns: 90% 10%;
+}
+
+.searcher-input {
+    font-size: 0.8em;
+    width: 100%;
+    margin-left: 0.2em;
+    padding: 0.3em;
+    border-radius: 0.3em;
+    background-color: rgb(227, 227, 227);
+}
+
+.searcher-input:focus {
+    outline: none;
+}
+
+.searcher-icon-container {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.searcher-icon {
+    color: rgb(227, 227, 227);
+    margin: auto;
+    font-size: 0.8em;
 }

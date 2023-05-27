@@ -3,6 +3,7 @@ import Header from '../header/Header'
 import Searcher from '../searcher/Searcher'
 import LogoW from '../logoW/LogoW'
 
+
 export default function Contacts() {
     return (
         <div className='contacts-container'>
@@ -11,7 +12,10 @@ export default function Contacts() {
                     <LogoW />
                 </div>
             </Header>
-            {/* <Searcher /> */}
+            <Searcher
+            type='text'
+            placeholder='Buscar usuario...' 
+            />
         </div>
     )
 }
