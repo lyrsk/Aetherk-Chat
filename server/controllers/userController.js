@@ -5,16 +5,6 @@ async function register (req, res, next) {
   try {
     const { username, email, password } = req.body
 
-    const usernameCheck = await User.findOne({ username })
-    if (usernameCheck) {
-      return res.json({ message: 'Usuario en uso', status: false })
-    }
-
-    const emailCheck = await User.findOne({ email })
-    if (emailCheck) {
-      return res.json({ message: 'Email en uso', status: false })
-    }
-
     const hashedPassword = await bcrypt.hash(password, 10)
 
     const user = await User.create({
@@ -22,21 +12,28 @@ async function register (req, res, next) {
       username,
       password: hashedPassword
     })
+
     delete user.password
+
     return res.json({ status: true, user })
-  } catch (ex) {
-    next(ex)
-  }
+  } catch (ex) { next(ex) }
 }
 
-async function checkUsername (req, res, next) {
+async function checkRegister (req, res, next) {
   try {
-    const { username } = req.body
+    const { username, email } = req.body
     const usernameCheck = await User.findOne({ username })
+    const emailCheck = await User.findOne({ email })
+
     if (usernameCheck) {
-      return res.json({ message: 'Usuario en uso', status: false })
+      return res.json({ message: 'Nombre de usuario en uso', status: false })
     }
-    return res.json({ message: 'Usuario disponible', status: true })
+
+    if (emailCheck) {
+      return res.json({ message: 'Correo electrónico en uso', status: false })
+    }
+
+    return res.json({ message: 'Nombre de usuario y correo electrónico disponibles', status: true })
   } catch (ex) {
     next(ex)
   }
@@ -103,6 +100,6 @@ async function getAllUsers (req, res, next) {
 }
 
 export {
-  register, login, changePassword, getAllUsers,
-  checkUsername
+  register, login, changePassword, getAllUsers
+  , checkRegister
 }

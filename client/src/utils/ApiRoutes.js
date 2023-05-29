@@ -4,4 +4,4 @@ export const registerRoute = `${host}/api/auth/register`
 export const loginRoute = `${host}/api/auth/login`
 export const passwordRoute = `${host}/api/auth/password`
 export const allUsersRoute = `${host}/api/allusers`
-export const checkUsernameRoute = `${host}/api/auth/check-username`
+export const checkRegisterRoute = `${host}/api/auth/check-register`
