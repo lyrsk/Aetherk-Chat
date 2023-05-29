@@ -1,26 +1,5 @@
 import { Message } from '../models/messageModel.js'
 
-// async function save (req, res) {
-//   const params = req.body
-//   const message = new Message()
-//   message.message = params.message
-//   message.from = params.from
-
-//   message.save((err, messageStored) => {
-//     if (err || !messageStored) {
-//       return res.status(404).send({
-//         status: 'error',
-//         message: 'El mensaje no se ha guardado'
-//       })
-//     }
-
-//     return res.status(200).send({
-//       status: 'success',
-//       message: messageStored
-//     })
-//   })
-// }
-
 async function save (req, res) {
   try {
     const params = req.body
@@ -48,30 +27,6 @@ async function save (req, res) {
     })
   }
 }
-
-// async function getMessages (req, res) {
-//   const query = Message.find({})
-//   query.sort('-_id').exec((err, messages) => {
-//     if (err) {
-//       return res.status(500).send({
-//         status: 'error',
-//         message: 'Error en la petición'
-//       })
-//     }
-
-//     if (!messages) {
-//       return res.status(200).send({
-//         status: 'success',
-//         messages: 'No hay mensajes para mostrar'
-//       })
-//     }
-
-//     return res.status(200).send({
-//       status: 'success',
-//       messages
-//     })
-//   })
-// }
 
 async function getMessages (req, res) {
   try {

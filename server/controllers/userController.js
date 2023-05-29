@@ -1,5 +1,5 @@
 import bcrypt from 'bcrypt'
-import { User } from '../model/userModel.js'
+import { User } from '../models/userModel.js'
 
 async function register (req, res, next) {
   try {
@@ -7,12 +7,12 @@ async function register (req, res, next) {
 
     const usernameCheck = await User.findOne({ username })
     if (usernameCheck) {
-      return res.json({ msg: 'Usuario en uso', status: false })
+      return res.json({ message: 'Usuario en uso', status: false })
     }
 
     const emailCheck = await User.findOne({ email })
     if (emailCheck) {
-      return res.json({ msg: 'Email en uso', status: false })
+      return res.json({ message: 'Email en uso', status: false })
     }
 
     const hashedPassword = await bcrypt.hash(password, 10)
@@ -24,6 +24,19 @@ async function register (req, res, next) {
     })
     delete user.password
     return res.json({ status: true, user })
+  } catch (ex) {
+    next(ex)
+  }
+}
+
+async function checkUsername (req, res, next) {
+  try {
+    const { username } = req.body
+    const usernameCheck = await User.findOne({ username })
+    if (usernameCheck) {
+      return res.json({ message: 'Usuario en uso', status: false })
+    }
+    return res.json({ message: 'Usuario disponible', status: true })
   } catch (ex) {
     next(ex)
   }
@@ -89,4 +102,7 @@ async function getAllUsers (req, res, next) {
   }
 }
 
-export { register, login, changePassword, getAllUsers }
+export {
+  register, login, changePassword, getAllUsers,
+  checkUsername
+}

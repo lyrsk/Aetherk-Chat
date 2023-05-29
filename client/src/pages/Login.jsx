@@ -3,6 +3,8 @@ import InputForm from '../components/form-input/InputForm'
 import ButtonForm from '../components/form-button/ButtonForm'
 import { Formik } from 'formik'
 import { FaUserAlt, FaLock } from 'react-icons/fa'
+import axios from 'axios'
+import { loginRoute } from '../utils/APIRoutes'
 
 function Login() {
     return (
@@ -23,20 +25,20 @@ function Login() {
   
             return errors
           }}
-        //   onSubmit={async (values, { resetForm }) => {
-        //     resetForm()
-        //     console.log('Enviando formulario', loginRoute)
+          onSubmit={async (values, { resetForm }) => {
+            resetForm()
+            console.log('Enviando formulario', loginRoute)
   
-        //     const { username, password } = values
-        //     const { data } = await axios.post(loginRoute, { username, password })
-        //     if (data.status === false) {
-        //       console.log(data.message)
-        //     }
-        //     if (data.status === true) {
-        //       localStorage.setItem('Aetherk', JSON.stringify(data.user))
-        //       navigate('/')
-        //     }
-        //   }}
+            const { username, password } = values
+            const { data } = await axios.post(loginRoute, { username, password })
+            if (data.status === false) {
+              console.log(data.message)
+            }
+            // if (data.status === true) {
+            //   localStorage.setItem('Aetherk', JSON.stringify(data.user))
+            //   navigate('/')
+            // }
+          }}
         >
           {({
             values,
@@ -47,6 +49,7 @@ function Login() {
             handleBlur
           }) => (
             <Form
+              action=''
               linkAccount='/register'
               account={{ children: '¿No tienes cuenta? ¡Regístrate!' }}
               onSubmit={handleSubmit}

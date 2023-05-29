@@ -2,7 +2,7 @@ import express from 'express'
 import mongoose from 'mongoose'
 import cors from 'cors'
 import dotenv from 'dotenv'
-import router from './routes/messageRouter.js'
+import { router } from './routes/userRoutes.js'
 import { Server as SocketServer } from 'socket.io'
 import http from 'http'
 import bodyParser from 'body-parser'
@@ -26,7 +26,7 @@ app.use(cors())
 app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-app.use('/api', router)
+app.use('/api/auth', router)
 
 mongoose.connect(url,
   {
