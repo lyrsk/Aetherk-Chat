@@ -18,7 +18,7 @@ function Register() {
 
   const checkUsernameAvailability = async (username) => {
     try {
-      setIsUsernameChecking(true);
+      setIsUsernameChecking(true)
       const { data } = await axios.post(checkRegisterRoute, { username })
       console.log(data)
       if (data.status === false) {
@@ -35,7 +35,7 @@ function Register() {
 
   const checkEmailAvailability = async (email) => {
     try {
-      setIsEmailChecking(true);
+      setIsEmailChecking(true)
       const { data } = await axios.post(checkRegisterRoute, { email })
       console.log(data)
       if (data.status === false) {
@@ -74,41 +74,41 @@ function Register() {
         const errors = {};
 
         if (!values.username) {
-          errors.username = 'Debe ingresar un usuario';
+          errors.username = 'Debe ingresar un usuario'
         } else if (!/^[a-zA-Z0-9._-]{4,32}(?<![-';%])$/i.test(values.username)) {
           errors.username =
-            'El usuario debe tener entre 4 y 32 caracteres y no puede contener espacios';
+            'El usuario debe tener entre 4 y 32 caracteres y no puede contener espacios'
         }
 
         if (!values.email) {
-          errors.email = 'Debe ingresar un correo electrónico';
+          errors.email = 'Debe ingresar un correo electrónico'
         } else if (
           !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i.test(values.email)
         ) {
-          errors.email = 'Correo eléctronico inválido';
+          errors.email = 'Correo eléctronico inválido'
         }
 
         if (!values.password) {
-          errors.password = 'Debe ingresar una contraseña';
+          errors.password = 'Debe ingresar una contraseña'
         } else if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,255}$/i.test(values.password)) {
           errors.password =
-            'La contraseña debe contener al menos 8 caracteres, una letra y un número.';
+            'La contraseña debe contener al menos 8 caracteres, una letra y un número.'
         }
 
         if (!values.confirmPassword) {
-          errors.confirmPassword = 'Debe ingresar una contraseña';
+          errors.confirmPassword = 'Debe ingresar una contraseña'
         } else if (
           !/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,255}$/i.test(values.confirmPassword)
         ) {
           errors.confirmPassword =
-            'La contraseña debe contener al menos 8 caracteres, una letra y un número.';
+            'La contraseña debe contener al menos 8 caracteres, una letra y un número.'
         }
 
         if (values.password !== values.confirmPassword) {
-          errors.confirmPassword = 'Las contraseñas no coinciden';
+          errors.confirmPassword = 'Las contraseñas no coinciden'
         }
 
-        return errors;
+        return errors
       }}
       onSubmit={async (values, { resetForm }) => {
         resetForm();
@@ -213,8 +213,8 @@ function Register() {
         </Form>
       )}
     </Formik>
-  );
+  )
 }
 
-export default Register;
+export default Register
 

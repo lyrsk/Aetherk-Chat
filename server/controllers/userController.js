@@ -33,7 +33,7 @@ async function checkRegister (req, res, next) {
       return res.json({ message: 'Correo electrónico en uso', status: false })
     }
 
-    return res.json({ message: 'Nombre de usuario y correo electrónico disponibles', status: true })
+    return res.json({ message: 'Disponible', status: true })
   } catch (ex) {
     next(ex)
   }
