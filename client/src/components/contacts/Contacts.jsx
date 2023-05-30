@@ -13,8 +13,8 @@ export default function Contacts() {
                 </div>
             </Header>
             <Searcher
-            type='text'
-            placeholder='Buscar usuario...' 
+                type='text'
+                placeholder='Buscar usuario...' 
             />
         </div>
     )

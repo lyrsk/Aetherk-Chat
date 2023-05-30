@@ -1,6 +1,7 @@
 import Form from '../components/form/Form'
 import InputForm from '../components/form-input/InputForm'
 import ButtonForm from '../components/form-button/ButtonForm'
+import LinkForm from '../components/form-link/LinkForm'
 import { Formik } from 'formik'
 import {FaEnvelope} from 'react-icons/fa'
 
@@ -42,8 +43,6 @@ function Password() {
         }) => (
           <Form
             onSubmit={handleSubmit}
-            linkAccount='/login'
-            account={{ children: 'o ¡Inicia sesión!' }}
           >
             <InputForm
               id='email'
@@ -60,6 +59,10 @@ function Password() {
             {touched.email && errors.email && <div className='error'><small>{errors.email}</small></div>}
   
             <ButtonForm type='submit'>Cambiar contraseña</ButtonForm>
+
+            <div className='form-account'>
+              <LinkForm linkAccount='/login' account={{ children: 'o ¡Inicia sesión!' }} />
+            </div>
           </Form>
         )}
       </Formik>

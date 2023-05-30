@@ -7,10 +7,11 @@
 .label-form input {
     font-size: 1em;
     padding: 0.5em;
+    padding-left: 0;
     border: none;
     border-bottom: 1px solid #161616;
     margin-top: 0.5em;
-    margin-left: 0.5em;
+    margin-left: 0.7em;
     margin-right: 0.7em;
     background-color: transparent;
     width: 100%;

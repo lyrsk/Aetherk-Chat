@@ -1,6 +1,7 @@
 import Form from '../components/form/Form'
 import InputForm from '../components/form-input/InputForm'
 import ButtonForm from '../components/form-button/ButtonForm'
+import LinkForm from '../components/form-link/LinkForm'
 import { Formik } from 'formik'
 import { FaUserAlt, FaLock } from 'react-icons/fa'
 import axios from 'axios'
@@ -50,8 +51,6 @@ function Login() {
           }) => (
             <Form
               action=''
-              linkAccount='/register'
-              account={{ children: '¿No tienes cuenta? ¡Regístrate!' }}
               onSubmit={handleSubmit}
             >
               <InputForm
@@ -83,7 +82,8 @@ function Login() {
               <ButtonForm type='submit'>Iniciar sesión</ButtonForm>
   
               <div className='form-account'>
-                <a href='/password'>¿Olvidaste tu contraseña?</a>
+                <LinkForm linkAccount='/password' account={{ children: '¿Olvidaste tu contraseña?' }} />
+                <LinkForm linkAccount='/register' account={{ children: '¿No tienes cuenta? ¡Regístrate!' }} />
               </div>
             </Form>
           )}

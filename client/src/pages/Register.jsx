@@ -1,6 +1,7 @@
 import Form from '../components/form/Form'
 import InputForm from '../components/form-input/InputForm'
 import ButtonForm from '../components/form-button/ButtonForm'
+import LinkForm from '../components/form-link/LinkForm'
 import { Formik } from 'formik'
 import { FaUserAlt, FaEnvelope, FaLock } from 'react-icons/fa'
 import { useState } from 'react'
@@ -31,7 +32,7 @@ function Register() {
     } finally {
       setIsUsernameChecking(false)
     }
-  };
+  }
 
   const checkEmailAvailability = async (email) => {
     try {
@@ -48,19 +49,38 @@ function Register() {
     } finally {
       setIsEmailChecking(false)
     }
-  };
-
-  const handleUsernameChange = (e, handleChange) => {
-    const { value } = e.target
-    handleChange(e)
-    checkUsernameAvailability(value)
   }
 
-  const handleEmailChange = (e, handleChange) => {
+  // const checkAvailability = async (value, setChecking, setDataError) => {  
+  //   try {
+  //     setChecking(true)
+  //     const {data} = axios.post(checkRegisterRoute, {value})
+  //     console.log(data)
+  //     if (data.status === false) {
+  //       setDataError(data.message)
+  //     } else {
+  //       setDataError('')
+  //     }
+  //   } catch (error) {
+  //     console.error('Error al verificar', error)
+  //   } finally {
+  //     setChecking(false)
+  //   }
+  // }
+
+  const handleDataChange = (e, handleChange, checkAvailability) => {
     const { value } = e.target
     handleChange(e)
-    checkEmailAvailability(value)
-  }
+    checkAvailability(value)
+    }
+    
+    const handleUsernameChange = (e, handleChange) => {
+    handleDataChange(e, handleChange, checkUsernameAvailability)
+    }
+    
+    const handleEmailChange = (e, handleChange) => {
+    handleDataChange(e, handleChange, checkEmailAvailability)
+    }
 
   return (
     <Formik
@@ -136,8 +156,6 @@ function Register() {
         <Form
           action=''
           onSubmit={handleSubmit}
-          linkAccount='/login'
-          account={{ children: 'o ¡Inicia sesión!' }}
         >
           <InputForm
             id='username'
@@ -210,6 +228,10 @@ function Register() {
           )}
 
           <ButtonForm type='submit'>Crear cuenta</ButtonForm>
+
+          <div className='form-account'>
+            <LinkForm linkAccount='/login' account={{ children: 'o ¡Inicia sesión!' }} />
+          </div>
         </Form>
       )}
     </Formik>

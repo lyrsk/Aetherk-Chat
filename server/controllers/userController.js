@@ -100,6 +100,9 @@ async function getAllUsers (req, res, next) {
 }
 
 export {
-  register, login, changePassword, getAllUsers
-  , checkRegister
+  register,
+  login,
+  changePassword,
+  getAllUsers,
+  checkRegister
 }

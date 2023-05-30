@@ -9,8 +9,9 @@ export default function ChatContainer() {
             <Header />
             <Msg />
             <ChatInput 
-            type='text'
-            placeholder='Escriba aquí su mensaje...' />
+                type='text'
+                placeholder='Escriba aquí su mensaje...'
+            />
         </div>
     )
 }

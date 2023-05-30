@@ -1,4 +1,3 @@
-import { React } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Chat from './pages/Chat'
 import Login from './pages/Login'
