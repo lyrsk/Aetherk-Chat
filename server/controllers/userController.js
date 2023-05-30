@@ -46,7 +46,7 @@ async function login (req, res, next) {
     const user = await User.findOne({ username })
     if (!user) {
       return res.json({
-        msg: 'Usuario o contraseña incorrecto',
+        message: 'Usuario o contraseña incorrecto',
         status: false
       })
     }
@@ -54,12 +54,12 @@ async function login (req, res, next) {
     const isPasswordCorrect = await bcrypt.compare(password, user.password)
     if (!isPasswordCorrect) {
       return res.json({
-        msg: 'Usuario o contraseña incorrecto',
+        message: 'Usuario o contraseña incorrecto',
         status: false
       })
     }
     delete user.password
-    return res.json({ status: true, user })
+    return res.json({ message: 'Sesión iniciada', status: true, user })
   } catch (ex) {
     next(ex)
   }
