@@ -1,13 +1,15 @@
-import Form from '../components/form/Form'
-import InputForm from '../components/form-input/InputForm'
-import ButtonForm from '../components/form-button/ButtonForm'
-import LinkForm from '../components/form-link/LinkForm'
-import { Formik } from 'formik'
-import { FaUserAlt, FaLock } from 'react-icons/fa'
-import axios from 'axios'
-import { loginRoute } from '../utils/APIRoutes'
-import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { Formik } from 'formik';
+import { FaUserAlt, FaLock } from 'react-icons/fa';
+
+import { loginRoute } from '../utils/APIRoutes';
+import Form from '../components/form/Form';
+import InputForm from '../components/form-input/InputForm';
+import ButtonForm from '../components/form-button/ButtonForm';
+import LinkForm from '../components/form-link/LinkForm';
+
 
 function Login() {
   const navigate = useNavigate()
