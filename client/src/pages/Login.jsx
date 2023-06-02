@@ -41,14 +41,12 @@ function Login() {
             const { data } = await axios.post(loginRoute, { username, password }) // Envío de los datos al servidor
             console.log(data)
 
-            if (data.status === false) { // Muestra mensaje de error cuando los datos son incorrectos
-              console.log(data.message)
-              setLoginError(data.message)
-            }
-
-            if (data.status === true) { // Inicia sesión y guarda los datos del usuario para mantener la sesión
+            if (data.status) {
               localStorage.setItem('Aetherk', JSON.stringify(data.user))
               navigate('/')
+            } else {
+              console.log(data.message)
+              setLoginError(data.message)
             }
           }}
         >

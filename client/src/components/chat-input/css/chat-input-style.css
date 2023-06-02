@@ -9,12 +9,19 @@
     width: 100%;
     padding: 0.7em;
     border-radius: 0.5em;
-    background-color: rgb(227, 227, 227);
+    /* background-color: rgb(227, 227, 227); */
+    color:rgb(227, 227, 227);
+    background-color: rgb(29, 29, 29);
     margin-left: 0.5em;
+    border: none;
 }
 
 .chat-input:focus {
     outline: none;
+}
+
+.chat-input::placeholder {
+    color: rgb(143, 143, 143);
 }
 
 .chat-input-icon {

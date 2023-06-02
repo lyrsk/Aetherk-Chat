@@ -24,7 +24,7 @@ function Register() {
       setIsUsernameChecking(true)
       const { data } = await axios.post(checkRegisterRoute, { username })
       console.log(data)
-      if (data.status === false) { // Muestra mensaje de error cuando el nombre de usuario ya está en uso
+      if (!data.status) { // Muestra mensaje de error cuando el nombre de usuario ya está en uso
         setUsernameError(data.message)
       } else { 
         setUsernameError('')
@@ -41,7 +41,7 @@ function Register() {
       setIsEmailChecking(true)
       const { data } = await axios.post(checkRegisterRoute, { email })
       console.log(data)
-      if (data.status === false) { // Muestra mensaje de error cuando el correo electrónico ya está en uso
+      if (!data.status) { // Muestra mensaje de error cuando el correo electrónico ya está en uso
         setEmailError(data.message)
       } else {
         setEmailError('')
@@ -123,7 +123,7 @@ function Register() {
         try {
           const { data } = await axios.post(registerRoute, { username, email, password }) // Envío de los datos al servidor
 
-          if (data.status === true) { // Redirección al login si el registro fue exitoso
+          if (data.status) { // Redirección al login si el registro fue exitoso
             localStorage.setItem('Aetherk', JSON.stringify(data.user));
             navigate('/login')
           }
@@ -166,7 +166,7 @@ function Register() {
           <InputForm
             id='email'
             name='email'
-            className={touched.email && errors.email ? 'error' : ''}
+            className={(touched.email && errors.email) || emailError ? 'error' : ''}
             type='email'
             placeholder='Ingrese su correo'
             value={values.email}

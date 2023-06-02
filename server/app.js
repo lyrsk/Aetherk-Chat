@@ -15,6 +15,7 @@ const app = express()
 const port = process.env.PORT || 5000
 
 const server = http.createServer(app)
+
 const io = new SocketServer(server, {
   cors: {
     origin: '*'
@@ -28,15 +29,17 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use('/api/auth', router)
 
-mongoose.connect(url,
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  })
+io.on('connection', (socket) => {
+  console.log(socket.id)
+})
+
+mongoose.connect(url, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err))
 
-app.listen(port, () => {
+server.listen(port, () => {
   console.log(`Server is running on port: ${port}`)
-}
-)
+})
