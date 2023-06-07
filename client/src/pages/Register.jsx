@@ -80,9 +80,9 @@ function Register() {
 
         if (!values.username) { // Validación del campo username
           errors.username = 'Debe ingresar un usuario'
-        } else if (!/^[a-zA-Z0-9._-]{4,32}(?<![-';%])$/i.test(values.username)) {
+        } else if (!/^[a-zA-Z0-9._-]{4,32}(?<![-';% ])$/i.test(values.username)) {
           errors.username =
-            'El usuario debe tener entre 4 y 32 caracteres y no puede contener espacios'
+            'El usuario debe tener entre 4 y 32 caracteres y no puede contener espacios';
         }
 
         if (!values.email) { // Validación del campo email
