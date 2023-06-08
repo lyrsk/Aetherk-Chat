@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
-import { Formik } from 'formik'
+import { Formik, useFormik } from 'formik'
 import { FaUserAlt, FaEnvelope, FaLock } from 'react-icons/fa'
 
 import { registerRoute, checkRegisterRoute } from '../utils/APIRoutes'
@@ -14,10 +14,10 @@ import LinkForm from '../components/form-link/LinkForm'
 function Register() {
   const navigate = useNavigate()
 
-  const [usernameError, setUsernameError] = useState('') // Estado para mostrar mensaje de error cuando el nombre de usuario ya está en uso
-  const [isUsernameChecking, setIsUsernameChecking] = useState(false) // Estado para mostrar mensaje de verificación del nombre de usuario
-  const [emailError, setEmailError] = useState('') // Estado para mostrar mensaje de error cuando el correo electrónico ya está en uso
-  const [isEmailChecking, setIsEmailChecking] = useState(false) // Estado para mostrar mensaje de verificación del correo electrónico
+  const [usernameError, setUsernameError] = useState('') 
+  const [isUsernameChecking, setIsUsernameChecking] = useState(false) 
+  const [emailError, setEmailError] = useState('')
+  const [isEmailChecking, setIsEmailChecking] = useState(false) 
 
   const checkUsernameAvailability = async (username) => { // Verifica la disponibilidad del nombre de usuario
     try {
@@ -67,70 +67,94 @@ function Register() {
     handleDataChange(e, handleChange, checkEmailAvailability)
     }
 
+    const initialValues = {
+      username: '',
+      email: '',
+      password: '',
+      confirmPassword: '',
+    }
+
+    const validate = (values) => { // Validación de los campos del formulario
+      const errors = {}
+    
+      if (!values.username) { // Validación del campo username
+        errors.username = 'Debe ingresar un usuario'
+      } else if (!/^[a-zA-Z0-9._-]{4,32}(?<![-';% ])$/i.test(values.username)) {
+        errors.username =
+          'El usuario debe tener entre 4 y 32 caracteres y no puede contener espacios';
+      }
+
+      if (!values.email) { // Validación del campo email
+        errors.email = 'Debe ingresar un correo electrónico'
+      } else if (
+        !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i.test(values.email)
+      ) {
+        errors.email = 'Correo eléctronico inválido'
+      }
+
+      if (!values.password) { // Validación del campo password
+        errors.password = 'Debe ingresar una contraseña'
+      } else if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,255}$/i.test(values.password)) {
+        errors.password =
+          'La contraseña debe contener al menos 8 caracteres, una letra y un número.'
+      }
+
+      if (!values.confirmPassword) { // Validación del campo confirmPassword
+        errors.confirmPassword = 'Debe ingresar una contraseña'
+      } else if (
+        !/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,255}$/i.test(values.confirmPassword)
+      ) {
+        errors.confirmPassword =
+          'La contraseña debe contener al menos 8 caracteres, una letra y un número.'
+      }
+
+      if (values.password !== values.confirmPassword) {
+        errors.confirmPassword = 'Las contraseñas no coinciden'
+      }
+
+      return errors
+    }
+
+    const onSubmit = async (values, { resetForm }) => { // Envío de los datos de registro
+      resetForm() // Limpia los campos del formulario
+
+      const { username, email, password } = values // Datos a enviar
+
+      try {
+        const { data } = await axios.post(registerRoute, { username, email, password }) // Envío de los datos al servidor
+
+        if (data.status) { // Redirección al login si el registro fue exitoso
+          localStorage.setItem('Aetherk', JSON.stringify(data.user))
+          navigate('/login')
+        }
+      } catch (error) {
+        console.error('Error al enviar la solicitud:', error)
+      }
+    }
+
+    const formikProps = useFormik({ // Dudosa procedencia
+      initialValues: initialValues,
+      validate: validate,
+      onSubmit: onSubmit
+    })
+  
+    useEffect(() => {
+      if (formikProps.values.username) { 
+        checkUsernameAvailability(formikProps.values.username);
+      }
+    }, [formikProps.values.username])
+  
+    useEffect(() => {
+      if (formikProps.values.email) {
+        checkEmailAvailability(formikProps.values.email);
+      }
+    }, [formikProps.values.email])
+
   return (
     <Formik
-      initialValues={{
-        username: '',
-        email: '',
-        password: '',
-        confirmPassword: '',
-      }}
-      validate={(values) => { // Validación de los campos de registro
-        const errors = {};
-
-        if (!values.username) { // Validación del campo username
-          errors.username = 'Debe ingresar un usuario'
-        } else if (!/^[a-zA-Z0-9._-]{4,32}(?<![-';% ])$/i.test(values.username)) {
-          errors.username =
-            'El usuario debe tener entre 4 y 32 caracteres y no puede contener espacios';
-        }
-
-        if (!values.email) { // Validación del campo email
-          errors.email = 'Debe ingresar un correo electrónico'
-        } else if (
-          !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i.test(values.email)
-        ) {
-          errors.email = 'Correo eléctronico inválido'
-        }
-
-        if (!values.password) { // Validación del campo password
-          errors.password = 'Debe ingresar una contraseña'
-        } else if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,255}$/i.test(values.password)) {
-          errors.password =
-            'La contraseña debe contener al menos 8 caracteres, una letra y un número.'
-        }
-
-        if (!values.confirmPassword) { // Validación del campo confirmPassword
-          errors.confirmPassword = 'Debe ingresar una contraseña'
-        } else if (
-          !/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,255}$/i.test(values.confirmPassword)
-        ) {
-          errors.confirmPassword =
-            'La contraseña debe contener al menos 8 caracteres, una letra y un número.'
-        }
-
-        if (values.password !== values.confirmPassword) {
-          errors.confirmPassword = 'Las contraseñas no coinciden'
-        }
-
-        return errors
-      }}
-      onSubmit={async (values, { resetForm }) => { // Envío de los datos de registro
-        resetForm() // Limpia los campos del formulario
-
-        const { username, email, password } = values // Datos a enviar
-
-        try {
-          const { data } = await axios.post(registerRoute, { username, email, password }) // Envío de los datos al servidor
-
-          if (data.status) { // Redirección al login si el registro fue exitoso
-            localStorage.setItem('Aetherk', JSON.stringify(data.user));
-            navigate('/login')
-          }
-        } catch (error) {
-          console.error('Error al enviar la solicitud:', error)
-        }
-      }}
+      initialValues={initialValues}
+      validate={validate}
+      onSubmit={onSubmit}
     >
       {({
         values,
