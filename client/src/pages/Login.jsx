@@ -4,11 +4,12 @@ import axios from 'axios'
 import { Formik } from 'formik'
 import { FaUserAlt, FaLock } from 'react-icons/fa'
 
-import { loginRoute } from '../utils/APIRoutes'
+import { loginRoute } from '../routes/APIRoutes'
 import Form from '../components/form/Form'
 import InputForm from '../components/form-input/InputForm'
 import ButtonForm from '../components/form-button/ButtonForm'
 import LinkForm from '../components/form-link/LinkForm'
+import validate from '../validations/loginValidation'
 
 function Login() {
   const navigate = useNavigate()
@@ -18,22 +19,6 @@ function Login() {
   const initialValues = {
     username: '',
     password: ''
-  }
-
-  const validate = (values) => {
-    const { username, password } = values;
-    const errors = {}
-
-    if (!username || username.trim() === '') {
-      errors.username = 'Debe ingresar un usuario';
-      console.log(errors.username)
-    }
-    if (!password || password.trim() === '') {
-      errors.password = 'Debe ingresar una contraseña';
-      console.log(errors.password)
-    }
-
-    return errors
   }
 
   const onSubmit = async (values, { resetForm }) => {

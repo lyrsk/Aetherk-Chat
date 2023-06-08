@@ -4,7 +4,7 @@ import axios from 'axios'
 import { Formik, useFormik } from 'formik'
 import { FaUserAlt, FaEnvelope, FaLock } from 'react-icons/fa'
 
-import { registerRoute, checkRegisterRoute } from '../utils/APIRoutes'
+import { registerRoute, checkRegisterRoute } from '../routes/APIRoutes'
 import Form from '../components/form/Form'
 import InputForm from '../components/form-input/InputForm'
 import ButtonForm from '../components/form-button/ButtonForm'
@@ -79,13 +79,15 @@ function Register() {
     
       if (!values.username) { // Validación del campo username
         errors.username = 'Debe ingresar un usuario'
-      } else if (!/^[a-zA-Z0-9._-]{4,32}(?<![-';% ])$/i.test(values.username)) {
+        console.log(errors.username)
+      } else if (!/^[a-zA-Z0-9._-]{4,32}(?<![-';%" ])$/i.test(values.username)) {
         errors.username =
-          'El usuario debe tener entre 4 y 32 caracteres y no puede contener espacios';
+          'El usuario debe tener entre 4 y 32 caracteres y no puede contener espacios'
       }
 
       if (!values.email) { // Validación del campo email
         errors.email = 'Debe ingresar un correo electrónico'
+        console.log(errors.email)
       } else if (
         !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i.test(values.email)
       ) {
@@ -132,23 +134,23 @@ function Register() {
       }
     }
 
-    const formikProps = useFormik({ // Dudosa procedencia
-      initialValues: initialValues,
-      validate: validate,
-      onSubmit: onSubmit
-    })
+    // const formikProps = useFormik({ // Dudosa procedencia
+    //   initialValues: initialValues,
+    //   validate: validate,
+    //   onSubmit: onSubmit
+    // })
   
-    useEffect(() => {
-      if (formikProps.values.username) { 
-        checkUsernameAvailability(formikProps.values.username);
-      }
-    }, [formikProps.values.username])
+    // useEffect(() => {
+    //   if (formikProps.values.username) { 
+    //     checkUsernameAvailability(formikProps.values.username);
+    //   }
+    // }, [formikProps.values.username])
   
-    useEffect(() => {
-      if (formikProps.values.email) {
-        checkEmailAvailability(formikProps.values.email);
-      }
-    }, [formikProps.values.email])
+    // useEffect(() => {
+    //   if (formikProps.values.email) {
+    //     checkEmailAvailability(formikProps.values.email);
+    //   }
+    // }, [formikProps.values.email])
 
   return (
     <Formik
