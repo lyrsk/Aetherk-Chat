@@ -5,11 +5,11 @@ import { Formik, useFormik } from 'formik'
 import { FaUserAlt, FaEnvelope, FaLock } from 'react-icons/fa'
 
 import { registerRoute, checkRegisterRoute } from '../routes/APIRoutes'
+import {validate} from '../validations/registerValidation'
 import Form from '../components/form/Form'
 import InputForm from '../components/form-input/InputForm'
 import ButtonForm from '../components/form-button/ButtonForm'
 import LinkForm from '../components/form-link/LinkForm'
-
 
 function Register() {
   const navigate = useNavigate()
@@ -74,49 +74,6 @@ function Register() {
       confirmPassword: '',
     }
 
-    const validate = (values) => { // Validación de los campos del formulario
-      const errors = {}
-    
-      if (!values.username) { // Validación del campo username
-        errors.username = 'Debe ingresar un usuario'
-        console.log(errors.username)
-      } else if (!/^[a-zA-Z0-9._-]{4,32}(?<![-';%" ])$/i.test(values.username)) {
-        errors.username =
-          'El usuario debe tener entre 4 y 32 caracteres y no puede contener espacios'
-      }
-
-      if (!values.email) { // Validación del campo email
-        errors.email = 'Debe ingresar un correo electrónico'
-        console.log(errors.email)
-      } else if (
-        !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i.test(values.email)
-      ) {
-        errors.email = 'Correo eléctronico inválido'
-      }
-
-      if (!values.password) { // Validación del campo password
-        errors.password = 'Debe ingresar una contraseña'
-      } else if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,255}$/i.test(values.password)) {
-        errors.password =
-          'La contraseña debe contener al menos 8 caracteres, una letra y un número.'
-      }
-
-      if (!values.confirmPassword) { // Validación del campo confirmPassword
-        errors.confirmPassword = 'Debe ingresar una contraseña'
-      } else if (
-        !/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,255}$/i.test(values.confirmPassword)
-      ) {
-        errors.confirmPassword =
-          'La contraseña debe contener al menos 8 caracteres, una letra y un número.'
-      }
-
-      if (values.password !== values.confirmPassword) {
-        errors.confirmPassword = 'Las contraseñas no coinciden'
-      }
-
-      return errors
-    }
-
     const onSubmit = async (values, { resetForm }) => { // Envío de los datos de registro
       resetForm() // Limpia los campos del formulario
 
@@ -174,6 +131,7 @@ function Register() {
             id='username'
             name='username'
             className={(touched.username && errors.username) || usernameError ? 'error' : ''}
+            // className={errors.username || usernameError ? 'error' : ''}
             type='text'
             placeholder='Ingrese un usuario'
             value={values.username}

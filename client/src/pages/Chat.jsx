@@ -3,8 +3,8 @@ import ContainerContacts from '../components/container-contacts/ContainerContact
 import ContainerChat from '../components/container-chat/ContainerChat'
 import { useState, useEffect } from 'react'
 
-import io from 'socket.io-client'
-const socket = io('http://localhost:5000')
+// import io from 'socket.io-client'
+// const socket = io('http://localhost:5000')
 
 function Chat() {
 

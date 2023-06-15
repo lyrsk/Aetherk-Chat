@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { Formik } from 'formik'
@@ -9,19 +9,44 @@ import Form from '../components/form/Form'
 import InputForm from '../components/form-input/InputForm'
 import ButtonForm from '../components/form-button/ButtonForm'
 import LinkForm from '../components/form-link/LinkForm'
-import validate from '../validations/loginValidation'
+import { validate } from '../validations/loginValidation'
+
+const initialValues = {
+  username: '',
+  password: ''
+}
 
 function Login() {
   const navigate = useNavigate()
 
   const [loginError, setLoginError] = useState('') // Estado para mostrar mensaje de error cuando los datos son incorrectos
 
-  const initialValues = {
-    username: '',
-    password: ''
-  }
+  // const initialValues = {
+  //   username: '',
+  //   password: ''
+  // }
 
-  const onSubmit = async (values, { resetForm }) => {
+  // const onSubmit = async (values, { resetForm }) => {
+  //   resetForm() // Limpia los campos del formulario
+
+  //   const { username, password } = values // Datos a enviar
+  //   try {
+  //     const { data } = await axios.post(loginRoute, { username, password }) // Envío de los datos al servidor
+  //     console.log(data)
+
+  //     if (data.status) {
+  //       localStorage.setItem('Aetherk', JSON.stringify(data.user))
+  //       navigate('/')
+  //     } else {
+  //       console.log(data.message)
+  //       setLoginError(data.message)
+  //     }
+  //   } catch (error) {
+  //     console.error('Error:', error) // Manejo de errores al realizar la solicitud
+  //   }
+  // }
+
+  const onSubmit = useCallback(async (values, { resetForm }) => {
     resetForm() // Limpia los campos del formulario
 
     const { username, password } = values // Datos a enviar
@@ -39,7 +64,7 @@ function Login() {
     } catch (error) {
       console.error('Error:', error) // Manejo de errores al realizar la solicitud
     }
-  }
+  }, [])
 
   return (
     <Formik

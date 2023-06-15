@@ -1,17 +1,15 @@
-const validate = (values) => {
-    const { username, password } = values;
-    const errors = {}
+function validate (values)  {
+  const { username, password } = values;
+  const errors = {}
 
-    if (!username || username.trim() === '') {
-      errors.username = 'Debe ingresar un usuario';
-      console.log(errors.username)
-    }
-    if (!password || password.trim() === '') {
-      errors.password = 'Debe ingresar una contraseña';
-      console.log(errors.password)
-    }
-
-    return errors
+  if (!username || username.trim() === '') {
+    errors.username = 'Debe ingresar un usuario';
+  }
+  if (!password || password.trim() === '') {
+    errors.password = 'Debe ingresar una contraseña';
   }
 
-export default validate
+  return errors
+}
+
+export { validate }
