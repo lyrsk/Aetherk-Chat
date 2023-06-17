@@ -18,7 +18,8 @@ const server = http.createServer(app)
 
 const io = new SocketServer(server, {
   cors: {
-    origin: '*'
+    origin: '*',
+    methods: ['GET', 'POST']
   }
 })
 
@@ -29,10 +30,16 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use('/api/auth', router)
 
+// Socket.io
 io.on('connection', (socket) => {
-  console.log(socket.id)
+  console.log(`User connected: ${socket.id}`)
+
+  socket.on('disconnect', () => {
+    console.log('User disconnected', socket.id)
+  })
 })
 
+// MongoDB
 mongoose.connect(url, {
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -40,6 +47,7 @@ mongoose.connect(url, {
   .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err))
 
+// Start server
 server.listen(port, () => {
   console.log(`Server is running on port: ${port}`)
 })
