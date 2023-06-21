@@ -11,20 +11,15 @@ import ButtonForm from '../components/form-button/ButtonForm'
 import LinkForm from '../components/form-link/LinkForm'
 import { validate } from '../validations/loginValidation'
 
-const initialValues = {
-  username: '',
-  password: ''
-}
-
 function Login() {
   const navigate = useNavigate()
 
   const [loginError, setLoginError] = useState('') // Estado para mostrar mensaje de error cuando los datos son incorrectos
 
-  // const initialValues = {
-  //   username: '',
-  //   password: ''
-  // }
+  const initialValues = {
+    username: '',
+    password: ''
+  }
 
   // const onSubmit = async (values, { resetForm }) => {
   //   resetForm() // Limpia los campos del formulario
