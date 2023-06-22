@@ -3,26 +3,17 @@ import InputForm from '../components/form-input/InputForm'
 import ButtonForm from '../components/form-button/ButtonForm'
 import LinkForm from '../components/form-link/LinkForm'
 import { Formik } from 'formik'
-import {FaEnvelope} from 'react-icons/fa'
+import { FaEnvelope } from 'react-icons/fa'
+import { passwordValidation } from '../validations/passwordValidation'
 
 function Password() {
+  const initialValues = {
+    email: ''
+  }
     return (
         <Formik
-        initialValues={{
-          email: ''
-        }}
-        validate={(values) => {
-          const errors = {}
-          if (!values.email) {
-            errors.email = 'Ingrese un correo válido'
-          } else if (
-            !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i.test(values.email)
-          ) {
-            errors.email =
-              'Correo eléctronico inválido'
-          }
-          return errors
-        }}
+        initialValues={initialValues}
+        validate={passwordValidation}
         // onSubmit={async (values, { resetForm }) => {
         //   resetForm()
         //   console.log('Enviando formulario', passwordRoute)

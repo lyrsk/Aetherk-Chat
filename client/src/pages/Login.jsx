@@ -5,11 +5,11 @@ import { Formik } from 'formik'
 import { FaUserAlt, FaLock } from 'react-icons/fa'
 
 import { loginRoute } from '../routes/APIRoutes'
+import { loginValidation } from '../validations/loginValidation'
 import Form from '../components/form/Form'
 import InputForm from '../components/form-input/InputForm'
 import ButtonForm from '../components/form-button/ButtonForm'
 import LinkForm from '../components/form-link/LinkForm'
-import { validate } from '../validations/loginValidation'
 
 function Login() {
   const navigate = useNavigate()
@@ -64,7 +64,7 @@ function Login() {
   return (
     <Formik
       initialValues={initialValues}
-      validate={validate}
+      validate={loginValidation}
       onSubmit={onSubmit}
     >
       {({

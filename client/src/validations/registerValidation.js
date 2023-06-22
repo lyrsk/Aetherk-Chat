@@ -1,4 +1,4 @@
-function validate (values) { // Validación de los campos del formulario
+function registerValidation (values) { // Validación de los campos del formulario
     const { username, email, password, confirmPassword } = values
     const errors = {}
   
@@ -37,5 +37,5 @@ function validate (values) { // Validación de los campos del formulario
   }
 
 export {
-  validate
+  registerValidation
 }

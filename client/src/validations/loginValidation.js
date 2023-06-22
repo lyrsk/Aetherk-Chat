@@ -1,4 +1,4 @@
-function validate (values)  {
+function loginValidation (values)  {
   const { username, password } = values;
   const errors = {}
 
@@ -12,4 +12,4 @@ function validate (values)  {
   return errors
 }
 
-export { validate }
+export { loginValidation }

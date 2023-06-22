@@ -5,7 +5,7 @@ import { Formik, useFormik } from 'formik'
 import { FaUserAlt, FaEnvelope, FaLock } from 'react-icons/fa'
 
 import { registerRoute, checkRegisterRoute } from '../routes/APIRoutes'
-import {validate} from '../validations/registerValidation'
+import { registerValidation } from '../validations/registerValidation'
 import Form from '../components/form/Form'
 import InputForm from '../components/form-input/InputForm'
 import ButtonForm from '../components/form-button/ButtonForm'
@@ -112,7 +112,7 @@ function Register() {
   return (
     <Formik
       initialValues={initialValues}
-      validate={validate}
+      validate={registerValidation}
       onSubmit={onSubmit}
     >
       {({
