@@ -21,26 +21,6 @@ function Login() {
     password: ''
   }
 
-  // const onSubmit = async (values, { resetForm }) => {
-  //   resetForm() // Limpia los campos del formulario
-
-  //   const { username, password } = values // Datos a enviar
-  //   try {
-  //     const { data } = await axios.post(loginRoute, { username, password }) // Envío de los datos al servidor
-  //     console.log(data)
-
-  //     if (data.status) {
-  //       localStorage.setItem('Aetherk', JSON.stringify(data.user))
-  //       navigate('/')
-  //     } else {
-  //       console.log(data.message)
-  //       setLoginError(data.message)
-  //     }
-  //   } catch (error) {
-  //     console.error('Error:', error) // Manejo de errores al realizar la solicitud
-  //   }
-  // }
-
   const onSubmit = useCallback(async (values, { resetForm }) => {
     resetForm() // Limpia los campos del formulario
 

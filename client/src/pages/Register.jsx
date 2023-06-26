@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
-import { Formik, useFormik } from 'formik'
+import { Formik } from 'formik'
 import { FaUserAlt, FaEnvelope, FaLock } from 'react-icons/fa'
 
 import { registerRoute, checkRegisterRoute } from '../routes/APIRoutes'
@@ -90,24 +90,6 @@ function Register() {
         console.error('Error al enviar la solicitud:', error)
       }
     }
-
-    // const formikProps = useFormik({ // Dudosa procedencia
-    //   initialValues: initialValues,
-    //   validate: validate,
-    //   onSubmit: onSubmit
-    // })
-  
-    // useEffect(() => {
-    //   if (formikProps.values.username) { 
-    //     checkUsernameAvailability(formikProps.values.username);
-    //   }
-    // }, [formikProps.values.username])
-  
-    // useEffect(() => {
-    //   if (formikProps.values.email) {
-    //     checkEmailAvailability(formikProps.values.email);
-    //   }
-    // }, [formikProps.values.email])
 
   return (
     <Formik
