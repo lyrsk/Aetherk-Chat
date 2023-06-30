@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { Formik } from 'formik'
@@ -113,7 +113,6 @@ function Register() {
             id='username'
             name='username'
             className={(touched.username && errors.username) || usernameError ? 'error' : ''}
-            // className={errors.username || usernameError ? 'error' : ''}
             type='text'
             placeholder='Ingrese un usuario'
             value={values.username}
