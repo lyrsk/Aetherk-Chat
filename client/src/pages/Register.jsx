@@ -53,13 +53,13 @@ function Register() {
     }
   }
 
-  const handleDataChange = (e, handleChange, checkAvailability) => { // Función para manejar los cambios en los campos de registro
+  const handleDataChange = (e, handleChange, checkAvailability) => { // Función para manejar los cambios en los campos de registro 
     const { value } = e.target
     handleChange(e)
     checkAvailability(value)
     }
     
-    const handleUsernameChange = (e, handleChange) => {
+    const handleUsernameChange = (e, handleChange) => { 
     handleDataChange(e, handleChange, checkUsernameAvailability)
     }
     
@@ -119,11 +119,11 @@ function Register() {
             onChange={(e) => handleUsernameChange(e, handleChange)}
             onBlur={handleBlur}
           >
-            <FaUserAlt className='icon-form' />
+          <FaUserAlt className='icon-form' />
           </InputForm>
           {(touched.username && errors.username && !isUsernameChecking) && (
             <div className='error'><small>{errors.username}</small></div>
-          )}
+            )}
           {!errors.username && usernameError && !isUsernameChecking && (
             <div className="error"><small>{usernameError}</small></div>
           )}

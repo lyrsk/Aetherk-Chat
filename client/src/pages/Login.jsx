@@ -63,8 +63,8 @@ function Login() {
             placeholder='Usuario'
             value={values.username}
             onChange={(e) => {
-              handleChange(e);
-              setLoginError('');
+              handleChange(e)
+              setLoginError('')
             }}
             onBlur={handleBlur}
           >
@@ -88,8 +88,8 @@ function Login() {
             placeholder='Contraseña'
             value={values.password}
             onChange={(e) => {
-              handleChange(e);
-              setLoginError('');
+              handleChange(e)
+              setLoginError('')
             }}
             onBlur={handleBlur}
           >
